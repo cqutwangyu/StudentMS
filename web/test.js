@@ -1,0 +1,5 @@
+json=[{"sno":"12132","ssex":"女","sname":"王鹅啊","sage":"21"},{"sno":"123","ssex":"男","sname":"王浩","sage":"49"},{"sno":"1234","ssex":"男","sname":"哇啊","sage":"24"},{"sno":"123456","ssex":"男","sname":"阿飞","sage":"26"},{"sno":"12345612","ssex":"男","sname":"阿飞","sage":"26"},{"sno":"123456121","ssex":"男","sname":"阿飞","sage":"26"},{"sno":"124","ssex":"女","sname":"奥术飞弹","sage":"21"},{"sno":"12521","ssex":"男","sname":"阿飞","sage":"26"},{"sno":"2131","ssex":"女","sname":"算法","sage":"64"},{"sno":"214","ssex":"女","sname":"阿斯蒂芬","sage":"52"},{"sno":"2143","ssex":"女","sname":"阿斯蒂芬","sage":"52"},{"sno":"215","ssex":"女","sname":"阿斯蒂芬","sage":"52"},{"sno":"216","ssex":"女","sname":"阿斯蒂芬","sage":"52"},{"sno":"217","ssex":"女","sname":"阿斯蒂芬","sage":"52"},{"sno":"222","ssex":"男","sname":"王三","sage":"25"},{"sno":"241","ssex":"男","sname":"是","sage":"21"},{"sno":"24215","ssex":"男","sname":"阿萨德","sage":"27"},{"sno":"3","ssex":"男","sname":"阿桑的歌","sage":"32"},{"sno":"3523","ssex":"男","sname":"飒沓","sage":"27"},{"sno":"4","ssex":"男","sname":"阿桑的歌","sage":"32"},{"sno":"5","ssex":"男","sname":"阿萨德","sage":"21"}]
+
+json.forEach(element => {
+    console.info(element['sno'])
+});

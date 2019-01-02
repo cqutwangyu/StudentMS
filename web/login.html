@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>学生管理系统</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/login.js"></script>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <!-- <form>
+            <label>帐号</label><input id="login_userName" type="text" name="userName">
+            <label>密码</label><input id="login_userPassword" type="password" name="userPassword">
+            <input type="button" value="登录" onclick="usesrLogin()">
+        </form>
+        <form>
+            <label>帐号</label><input id="register_userName" type="text" name="userName">
+            <label>密码</label><input id="register_userPassword" type="password" name="userPassword">
+            <input type="button" value="注册" onclick="usesrRegister()">
+        </form> -->
+    <div class="background_div">
+        <img class="background_img" src="img/bg.jpg" alt="">
+    </div>
+    <div class="login_body">
+        <div class="login_title">学生管理系统</div>
+        <form class="login_form">
+            <div class="login_uinArea">
+                <label class="login_tips">用户名</label>
+                <div class="login_inputOuter">
+                    <input class="login_input" id="userName" type="text" name="userName" onfocus="inputFocus(this)"
+                        onblur="inputBlur(this)" onkeyup="inputUp(this)">
+                </div>
+            </div>
+            <div class="login_pwdArea">
+                <label class="login_tips">密码</label>
+                <div class="login_inputOuter">
+                    <input class="login_input" id="userPassword" type="password" name="userName" onfocus="inputFocus(this)"
+                        onblur="inputBlur(this)" onkeyup="inputUp(this)">
+                </div>
+            </div>
+            <div class="login_button">
+                <input class="btn" type="button" value="登录" onclick="usesrLogin()">
+            </div>
+            <div class="register_button">
+                <input class="btn" type="button" value="注册" onclick="usesrRegister()">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>学生管理系统</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link type="text/css" rel="stylesheet" href="css/font_276948_ld811uq728.css" />
+</head>
+
+<body>
+    <section class="app-main">
+        <div class="app-container">
+            <!-- 搜索栏 -->
+            <div class="filter-container">
+                <!-- 下拉框 -->
+                <div class="el-select filter-item el-select--medium" style="width:90px;">
+                    <div id="select-dropdown" class="el-input el-input--medium el-input--suffix">
+                        <input id="search" class="el-input__inner" readonly="readonly" autocomplete="off" placeholder="索引"
+                            type="text">
+                        <span class="el-input__suffix">
+                            <span class="el-input__suffix-inner">
+                                <i class="el-select__caret el-input__icon el-icon-arrow-up">
+                                </i>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <!-- 输入框 -->
+                <div class="filter-item el-input el-input--medium" style="width: 200px;">
+                    <input id="search_text" class="el-input__inner" autocomplete="off" placeholder="搜索内容" type="text">
+                </div>
+                <!-- 搜索按钮 -->
+                <button class="el-button filter-item el-button--primary el-button--medium" type="button" onclick="searchStudent()">
+                    <i class="el-icon-search"></i>
+                    <span>搜索</span>
+                </button>
+                <!-- 添加 -->
+                <button class="el-button filter-item el-button--primary el-button--medium" type="button" onclick="addStudent()">
+                    <i class="el-icon-add"></i>
+                    <span>添加</span>
+                </button>
+            </div>
+            <!-- 表格 -->
+            <div style="width:100%" class="el-table el-table--fit el-table--border el-table--enable-row-hover el-table--enable-row-transition el-table--medium">
+                <!-- 表头 -->
+                <div class="el-table__header-wrapper">
+                    <table cellspacing="0" cellpadding="0" border="0" class="el-table__header" style="width: 100%;">
+                        <colgroup>
+                            <col name="el-table_4_column_26" width="12.5%">
+                            <col name="el-table_4_column_27" width="12.5%">
+                            <col name="el-table_4_column_28" width="12.5%">
+                            <col name="el-table_4_column_29" width="12.5%">
+                            <col name="el-table_4_column_30" width="12.5%">
+                            <col name="el-table_4_column_31" width="12.5%">
+                            <col name="el-table_4_column_32" width="12.5%">
+                            <col name="el-table_4_column_33" width="12.5%">
+                            <col name="gutter" width="0">
+                        </colgroup>
+                        <thead class="has-gutter">
+                            <tr class="">
+                                <th colspan="1" rowspan="1" class="el-table_4_column_26  is-center   is-leaf is-sortable"
+                                    style="cursor: col-resize;">
+                                    <div class="cell">学号<span class="caret-wrapper"><i class="sort-caret ascending"></i><i
+                                                class="sort-caret descending"></i></span></div>
+                                </th>
+                                <th colspan="1" rowspan="1" class="el-table_4_column_27  is-center   is-leaf">
+                                    <div class="cell">姓名</div>
+                                </th>
+                                <th colspan="1" rowspan="1" class="el-table_4_column_28     is-leaf">
+                                    <div class="cell">出生年月</div>
+                                </th>
+                                <th colspan="1" rowspan="1" class="el-table_4_column_29  is-center   is-leaf">
+                                    <div class="cell">性别</div>
+                                </th>
+                                <th colspan="1" rowspan="1" class="el-table_4_column_30     is-leaf">
+                                    <div class="cell">籍贯</div>
+                                </th>
+                                <th colspan="1" rowspan="1" class="el-table_4_column_31  is-center   is-leaf">
+                                    <div class="cell">家庭地址</div>
+                                </th>
+                                <th colspan="1" rowspan="1" class="el-table_4_column_32   status-col  is-leaf">
+                                    <div class="cell">民族</div>
+                                </th>
+                                <th colspan="1" rowspan="1" class="el-table_4_column_33  is-center small-padding fixed-width  is-leaf">
+                                    <div class="cell">操作</div>
+                                </th>
+                                <th class="gutter" style="width: 0px; display: none;"></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <!-- 表体 -->
+                <div class="el-table__body-wrapper is-scrolling-none">
+                    <table cellspacing="0" cellpadding="0" border="0" class="el-table__body" style="width: 100%;">
+                        <colgroup>
+                            <col name="el-table_4_column_26" width="12.5%">
+                            <col name="el-table_4_column_27" width="12.5%">
+                            <col name="el-table_4_column_28" width="12.5%">
+                            <col name="el-table_4_column_29" width="12.5%">
+                            <col name="el-table_4_column_30" width="12.5%">
+                            <col name="el-table_4_column_31" width="12.5%">
+                            <col name="el-table_4_column_32" width="12.5%">
+                            <col name="el-table_4_column_33" width="12.5%">
+                        </colgroup>
+                        <tbody>
+                            <tr class="el-table__row">
+                                <td rowspan="1" colspan="1" class="el-table_4_column_26 is-center ">
+                                    <div class="cell"><span>91621380216</span></div>
+                                </td>
+                                <td rowspan="1" colspan="1" class="el-table_4_column_27 is-center ">
+                                    <div class="cell"><span>王渔</span></div>
+                                </td>
+                                <td rowspan="1" colspan="1" class="el-table_4_column_28  ">
+                                    <div class="cell"><span class="link-type">1997年5月13日</span> </div>
+                                </td>
+                                <td rowspan="1" colspan="1" class="el-table_4_column_29 is-center ">
+                                    <div class="cell"><span>男</span></div>
+                                </td>
+                                <td rowspan="1" colspan="1" class="el-table_4_column_30  ">
+                                    <div class="cell"><span class="link-type">重庆</span></div>
+                                </td>
+                                <td rowspan="1" colspan="1" class="el-table_4_column_31 is-center ">
+                                    <div class="cell"><span class="link-type">重庆市北碚区</span></div>
+                                </td>
+                                <td rowspan="1" colspan="1" class="el-table_4_column_32  status-col">
+                                    <div class="cell"><span class="el-tag el-tag--info el-tag--medium">汉族
+                                            <!----></span></div>
+                                </td>
+                                <td rowspan="1" colspan="1" class="el-table_4_column_33 is-center small-padding fixed-width">
+                                    <div class="cell"><button type="button" class="el-button el-button--primary el-button--mini">
+                                            <!---->
+                                            <!----><span>编辑</span></button>
+                                        <!----> <button type="button" class="el-button el-button--danger el-button--mini">
+                                            <!---->
+                                            <!----><span>删除
+                                            </span></button></div>
+                                </td>
+                            </tr>
+                            <tr class="el-table__row">
+                                <td rowspan="1" colspan="1" class="el-table_4_column_26 is-center ">
+                                    <div class="cell"><span>91621380217</span></div>
+                                </td>
+                                <td rowspan="1" colspan="1" class="el-table_4_column_27 is-center ">
+                                    <div class="cell"><span>杨花</span></div>
+                                </td>
+                                <td rowspan="1" colspan="1" class="el-table_4_column_28  ">
+                                    <div class="cell"><span class="link-type">1996年6月12日</span></div>
+                                </td>
+                                <td rowspan="1" colspan="1" class="el-table_4_column_29 is-center ">
+                                    <div class="cell"><span>女</span></div>
+                                </td>
+                                <td rowspan="1" colspan="1" class="el-table_4_column_30  ">
+                                    <div class="cell"><span class="link-type">四川</span></div>
+                                </td>
+                                <td rowspan="1" colspan="1" class="el-table_4_column_31 is-center ">
+                                    <div class="cell"><span class="link-type">四川省遂宁市</span></div>
+                                </td>
+                                <td rowspan="1" colspan="1" class="el-table_4_column_32  status-col">
+                                    <div class="cell"><span class="el-tag el-tag--info el-tag--medium">汉族
+                                            <!----></span></div>
+                                </td>
+                                <td rowspan="1" colspan="1" class="el-table_4_column_33 is-center small-padding fixed-width">
+                                    <div class="cell"><button type="button" class="el-button el-button--primary el-button--mini">
+                                            <!---->
+                                            <!----><span>编辑</span></button>
+                                        <!----> <button type="button" class="el-button el-button--danger el-button--mini">
+                                            <!---->
+                                            <!----><span>删除
+                                            </span></button></div>
+                                </td>
+                            </tr>
+                            <!---->
+                        </tbody>
+                    </table>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <!-- 弹出对话框 -->
+            <div class="el-dialog__wrapper" style="z-index: 2005;">
+                <div class="el-dialog" style="margin-top: 7vh;">
+                    <div class="el-dialog__header"><span class="el-dialog__title">编辑</span><button onclick="closeDialog()"
+                            type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div>
+                    <div class="el-dialog__body">
+                        <form class="el-form el-form--label-left" style="width: 400px; margin-left: 50px;">
+                            <div class="el-form-item is-required el-form-item--medium"><label for="type" class="el-form-item__label"
+                                    style="width: 70px;">学号</label>
+                                <div class="el-form-item__content" style="margin-left: 70px;">
+                                        <div class="el-input el-input--medium el-input--suffix">
+                                            <!----><input type="text" autocomplete="off" class="el-input__inner">
+                                            <!---->
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="el-form-item is-required el-form-item--medium"><label for="timestamp" class="el-form-item__label"
+                                    style="width: 70px;">姓名</label>
+                                <div class="el-form-item__content" style="margin-left: 70px;">
+                                    <div class="el-date-editor el-input el-input--medium el-input--prefix el-input--suffix el-date-editor--datetime">
+                                        <!----><input type="text" autocomplete="off" class="el-input__inner">
+                                    </div>
+                                    <!---->
+                                </div>
+                            </div>
+                            <div class="el-form-item is-required el-form-item--medium"><label for="title" class="el-form-item__label"
+                                    style="width: 70px;">出生日期</label>
+                                <div class="el-form-item__content" style="margin-left: 70px;">
+                                    <div class="el-input el-input--medium">
+                                        <!----><input type="text" autocomplete="off" class="el-input__inner">
+                                    </div>
+                                    <!---->
+                                </div>
+                            </div>
+                            <div class="el-form-item el-form-item--medium"><label class="el-form-item__label" style="width: 70px;">性别</label>
+                                <div class="el-form-item__content" style="margin-left: 70px;">
+                                        <div class="el-input el-input--medium el-input--suffix">
+                                            <!----><input type="text" autocomplete="off" class="el-input__inner">
+                                            <!---->
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="el-form-item is-required el-form-item--medium"><label for="title" class="el-form-item__label"
+                                    style="width: 70px;">籍贯</label>
+                                <div class="el-form-item__content" style="margin-left: 70px;">
+                                    <div class="el-input el-input--medium">
+                                        <!----><input type="text" autocomplete="off" class="el-input__inner">
+                                    </div>
+                                    <!---->
+                                </div>
+                            </div>
+                            <div class="el-form-item is-required el-form-item--medium"><label for="title" class="el-form-item__label"
+                                    style="width: 70px;">家庭地址</label>
+                                <div class="el-form-item__content" style="margin-left: 70px;">
+                                    <div class="el-input el-input--medium">
+                                        <!----><input type="text" autocomplete="off" class="el-input__inner">
+                                    </div>
+                                    <!---->
+                                </div>
+                            </div>
+                            <div class="el-form-item is-required el-form-item--medium"><label for="title" class="el-form-item__label"
+                                    style="width: 70px;">民族</label>
+                                <div class="el-form-item__content" style="margin-left: 70px;">
+                                    <div class="el-input el-input--medium">
+                                        <!----><input type="text" autocomplete="off" class="el-input__inner">
+                                    </div>
+                                    <!---->
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="el-dialog__footer">
+                        <div class="dialog-footer"><button type="button" class="el-button el-button--default el-button--medium">
+                                <!---->
+                                <!----><span>取消</span></button> <button type="button" class="el-button el-button--primary el-button--medium">
+                                <!---->
+                                <!----><span>确认</span></button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 下拉框内容 -->
+    <div class="el-select-dropdown el-popper" placement="bottom-start" style="display: none; min-width: 90px; transform-origin: center top 0px; z-index: 2123; position: absolute; top: 65px; left: 28px;">
+        <div class="el-scrollbar">
+            <div class="el-select-dropdown__wrap el-scrollbar__wrap" style="margin-bottom: -17px; margin-right: -17px;">
+                <ul class="el-scrollbar__view el-select-dropdown__list">
+                    <li class="el-select-dropdown__item" key="sno"><span>学号</span></li>
+                    <li class="el-select-dropdown__item" key="sname"><span>姓名</span></li>
+                    <li class="el-select-dropdown__item" key="sage"><span>年龄</span></li>
+                    <li class="el-select-dropdown__item" key="ssex"><span>性别</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="v-modal" tabindex="0" style="z-index: 2002;"></div>
+    <!-- <form>
+        <label>学号</label><input id="sno" type="text" name="sno">
+        <label>姓名</label><input id="sname" type="text" name="sname">
+        <label>年龄</label><input id="sage" type="text" name="sage">
+        <label>性别</label><input id="ssex" type="text" name="ssex">
+        <input id="addStudent" type="button" value="添加" onclick="addStudent()">
+    </form>
+    <div class="search">
+        <select id="search">
+            <option value="sno">学号</option>
+            <option value="sname">姓名</option>
+            <option value="sage">年龄</option>
+            <option value="ssex">性别</option>
+        </select>
+        <input id="search_text" type="text">
+        <input type="button" value="查询" onclick="searchStudent()">
+    </div>
+    <div class="editForm">
+        <form>
+            <label>学号</label><input id="sno_new" type="text" name="sno">
+            <label>姓名</label><input id="sname_new" type="text" name="sname">
+            <label>年龄</label><input id="sage_new" type="text" name="sage">
+            <label>性别</label><input id="ssex_new" type="text" name="ssex">
+            <input id="editStudent" type="button" value="修改" onclick="updateStudent()">
+        </form>
+    </div> -->
+    <!-- <div class="json"></div> -->
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+*{
+    margin: 0px;  
+    text-decoration: none;
+  }
+.background_div{
+    width: 100%; height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+.background_img{
+    position: absolute;
+    width: 1536px;
+    height: 1022px;
+    top: -149.5px;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity .8s ease;
+}
+.login_body{
+    position: relative;
+    background-color: white;
+    width: 418px;
+    height: 316px;
+    left: 789px;
+    bottom: -118px;
+}
+.login_title{
+    font-size: 20px;
+    color: #333;
+    padding: 15px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+.login_form{
+    width: 272px;
+    margin: 0 auto;
+}
+.login_uinArea{
+    height: 55px;
+    position: relative;
+    z-index: 10;
+}
+.login_pwdArea{
+    height: 55px;
+    position: relative;
+    z-index: 10;
+}
+.login_tips{
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #aaa;
+    cursor: text;
+    display: block;
+}
+.login_inputOuter{
+    width: 272px;
+    height: 42px;
+    background: url("../img/icon_3_tiny.png")-1px -1px no-repeat;
+}
+.login_input{
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 16px 18px;
+    background-position: 98% 50%;
+    cursor: auto;
+    width: 258px;
+    position: relative;
+    top: 2px;
+    left: 2px;
+    height: 18px;
+    padding: 10px 0 10px 10px;
+    line-height: 18px;
+    border: none;
+    background: 0 0;
+    color: #333;
+    font-family: Verdana,Tahoma,Arial;
+    font-size: 16px;
+}
+.login_button{
+    position: relative;
+    height: 40px;
+    background-color: #86ce2f;
+    margin-bottom: 10px;
+}
+.register_button{
+    position: relative;
+    height: 40px;
+    background-color: #3487ff;
+    margin-bottom: 10px;
+}
+.btn{
+    width: 100%;
+    height: 40px;
+    line-height: 35px;
+    border: none;
+    font-size: 17px;
+    font-weight: 400;
+    color: #fff;
+    background: 0 0;
+    cursor: pointer;
+}
