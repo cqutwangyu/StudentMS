@@ -53,6 +53,109 @@ function selectUp() {
         $(this).addClass('hover')
     })
 }
+function addStudent() {
+    if ($(".el-dialog__wrapper").css("display") == "none") {
+        $(".el-dialog__title").text("添加")
+        $("#dialog_yes").attr("onclick","addStudent()")
+        $(".el-dialog__wrapper").show()
+        $(".v-modal").show()
+        return
+    }
+    $.ajax({
+        url: 'StudentServlet', //要请求的url地址
+        type: 'POST', //请求方法 GET or POST
+        async: true, //是否使用异步请求的方式
+        timeout: 5000, //请求超时的时间，以毫秒计
+        data: {
+            method: 'addStudent',
+            sno: $("#sno").val(),
+            sname: $("#sname").val(),
+            sdatebirth: $("#sdatebirth").val(),
+            ssex: $("#ssex").val(),
+            snativeplace: $("#snativeplace").val(),
+            shouseaddress: $("#shouseaddress").val(),
+            snation: $("#snation").val()
+        }, //参数，用POST方法时使用，如果用GET方法则直接在url后拼接参数即可
+        // dataType:'json', //预期的服务器返回参数类型，如果不是预期类型则会认为请求失败执行error
+        beforeSend: function () {
+
+        },//再发送请求前调用的方法
+        success: function (msg) {
+            alert(msg)
+            clarJsonTable()
+            load()
+        }, //请求成功时回调方法，data为服务器返回的数据
+        error: function () {
+            alert("添加失败！")
+
+        }, //请求发生错误时调用方法
+        complete: function () {
+
+        } //回调方法 无论success或者error都会执行
+    });
+}
+
+function deleteStudent(e) {
+    $.ajax({
+        url: 'StudentServlet', //要请求的url地址
+        type: 'POST', //请求方法 GET or POST
+        async: true, //是否使用异步请求的方式
+        timeout: 5000, //请求超时的时间，以毫秒计
+        data: {
+            method: 'deleteStudent',
+            sno: e
+        }, //参数，用POST方法时使用，如果用GET方法则直接在url后拼接参数即可
+        beforeSend: function () {
+
+        },//再发送请求前调用的方法
+        success: function (msg) {
+            alert(msg)
+            clarJsonTable()
+            load()
+        }, //请求成功时回调方法，data为服务器返回的数据
+        error: function () {
+            alert("删除失败！")
+
+        }, //请求发生错误时调用方法
+        complete: function () {
+
+        } //回调方法 无论success或者error都会执行
+    });
+}
+
+function updateStudent() {
+    $.ajax({
+        url: 'StudentServlet', //要请求的url地址
+        type: 'POST', //请求方法 GET or POST
+        async: true, //是否使用异步请求的方式
+        timeout: 5000, //请求超时的时间，以毫秒计
+        data: {
+            method: 'updateStudent',
+            sno_old: $("#sno_new").attr("sno_old"),
+            sno: $("#sno_new").val(),
+            sname: $("#sname_new").val(),
+            sage: $("#sage_new").val(),
+            ssex: $("#ssex_new").val(),
+        }, //参数，用POST方法时使用，如果用GET方法则直接在url后拼接参数即可
+        beforeSend: function () {
+
+        },//再发送请求前调用的方法
+        success: function (msg) {
+            alert(msg)
+            clarJsonTable()
+            load()
+            $(".editForm").css("display", "none")
+        }, //请求成功时回调方法，data为服务器返回的数据
+        error: function () {
+            alert("删除失败！")
+
+        }, //请求发生错误时调用方法
+        complete: function () {
+
+        } //回调方法 无论success或者error都会执行
+    });
+}
+
 function searchStudent() {
     $.ajax({
         url: 'StudentServlet', //要请求的url地址
@@ -123,66 +226,6 @@ function queryStudent(e) {
     });
 }
 
-function updateStudent() {
-    $.ajax({
-        url: 'StudentServlet', //要请求的url地址
-        type: 'POST', //请求方法 GET or POST
-        async: true, //是否使用异步请求的方式
-        timeout: 5000, //请求超时的时间，以毫秒计
-        data: {
-            method: 'updateStudent',
-            sno_old: $("#sno_new").attr("sno_old"),
-            sno: $("#sno_new").val(),
-            sname: $("#sname_new").val(),
-            sage: $("#sage_new").val(),
-            ssex: $("#ssex_new").val(),
-        }, //参数，用POST方法时使用，如果用GET方法则直接在url后拼接参数即可
-        beforeSend: function () {
-
-        },//再发送请求前调用的方法
-        success: function (msg) {
-            alert(msg)
-            clarJsonTable()
-            load()
-            $(".editForm").css("display", "none")
-        }, //请求成功时回调方法，data为服务器返回的数据
-        error: function () {
-            alert("删除失败！")
-
-        }, //请求发生错误时调用方法
-        complete: function () {
-
-        } //回调方法 无论success或者error都会执行
-    });
-}
-
-function deleteStudent(e) {
-    $.ajax({
-        url: 'StudentServlet', //要请求的url地址
-        type: 'POST', //请求方法 GET or POST
-        async: true, //是否使用异步请求的方式
-        timeout: 5000, //请求超时的时间，以毫秒计
-        data: {
-            method: 'deleteStudent',
-            sno: e
-        }, //参数，用POST方法时使用，如果用GET方法则直接在url后拼接参数即可
-        beforeSend: function () {
-
-        },//再发送请求前调用的方法
-        success: function (msg) {
-            alert(msg)
-            clarJsonTable()
-            load()
-        }, //请求成功时回调方法，data为服务器返回的数据
-        error: function () {
-            alert("删除失败！")
-
-        }, //请求发生错误时调用方法
-        complete: function () {
-
-        } //回调方法 无论success或者error都会执行
-    });
-}
 
 function load() {
     $.ajax({
@@ -208,56 +251,28 @@ function load() {
         } //回调方法 无论success或者error都会执行
     });
 }
-
-
-function addStudent() {
-    if ($(".el-dialog__wrapper").css("display") == "none") {
-        $(".el-dialog__title").text("添加")
-        $(".el-dialog__wrapper").show()
-        $(".v-modal").show()
-        return
-    }
-    $.ajax({
-        url: 'addStudent', //要请求的url地址
-        type: 'POST', //请求方法 GET or POST
-        async: true, //是否使用异步请求的方式
-        timeout: 5000, //请求超时的时间，以毫秒计
-        data: {
-            sno: $("#sno").val(),
-            sname: $("#sname").val(),
-            sage: $("#sage").val(),
-            ssex: $("#ssex").val()
-        }, //参数，用POST方法时使用，如果用GET方法则直接在url后拼接参数即可
-        // dataType:'json', //预期的服务器返回参数类型，如果不是预期类型则会认为请求失败执行error
-        beforeSend: function () {
-
-        },//再发送请求前调用的方法
-        success: function (msg) {
-            alert(msg)
-            clarJsonTable()
-            load()
-        }, //请求成功时回调方法，data为服务器返回的数据
-        error: function () {
-            alert("添加失败！")
-
-        }, //请求发生错误时调用方法
-        complete: function () {
-
-        } //回调方法 无论success或者error都会执行
-    });
-}
 function clarJsonTable() {
-    var element = document.getElementById("jsonTable");
+    // var element = document.getElementById("jsonTable");
+    // element.parentElement.removeChild(element);
+    var element = document.getElementById("table_body");
     element.parentElement.removeChild(element);
+
 }
 function showStudent(json) {
-    var item = "<table id='jsonTable'><thead><tr><td>学号</td><td>姓名</td><td>年龄</td><td>性别</td><td>操作</td></tr></thead><tbody>";
-    $.each(json, function (i, result) {
-        item += "<tr><td>" + result['sno'] + "</td><td>" + result['sname'] + "</td><td>" + result['sage'] + "</td><td>" + result['ssex'] + "</td>" +
-            "<td><input class='jsonButton' type='button' onclick='queryStudent(" + result['sno'] + ")' value='编辑'>" +
-            "<input class='jsonButton' type='button' onclick='deleteStudent(" + result['sno'] + ")' value='删除'></td></tr>";
-    });
-    item += "</tbody><tfoot><tr><td><a>1</a><a>2</a></td></tr></tfoot>";
-    item += "</table>";
-    $(".json").append(item);
+    // var item = "<table id='jsonTable'><thead><tr><td>学号</td><td>姓名</td><td>年龄</td><td>性别</td><td>操作</td></tr></thead><tbody>";
+    // $.each(json, function (i, result) {
+    //     item += "<tr><td>" + result['sno'] + "</td><td>" + result['sname'] + "</td><td>" + result['sage'] + "</td><td>" + result['ssex'] + "</td>" +
+    //         "<td><input class='jsonButton' type='button' onclick='queryStudent(" + result['sno'] + ")' value='编辑'>" +
+    //         "<input class='jsonButton' type='button' onclick='deleteStudent(" + result['sno'] + ")' value='删除'></td></tr>";
+    // });
+    // item += "</tbody><tfoot><tr><td><a>1</a><a>2</a></td></tr></tfoot>";
+    // item += "</table>";
+    // $(".json").append(item);
+    
+    var item="<tbody id='table_body'>"
+    $.each(json,function(i,result){
+        item+="<tr class='el-table__row'><td rowspan='1' colspan='1' class='el-table_4_column_26 is-center '><div class='cell'><span>"+result['sno']+"</span></div></td><td rowspan='1' colspan='1' class='el-table_4_column_27 is-center '><div class='cell'><span>"+result['sname']+"</span></div></td><td rowspan='1' colspan='1' class='el-table_4_column_28  '><div class='cell'><span class='link-type'>"+result['sdatebirth']+"</span> </div></td><td rowspan='1' colspan='1' class='el-table_4_column_29 is-center '><div class='cell'><span>"+result['ssex']+"</span></div></td><td rowspan='1' colspan='1' class='el-table_4_column_30  '><div class='cell'><span class='link-type'>"+result['snativeplace']+"</span></div></td><td rowspan='1' colspan='1' class='el-table_4_column_31 is-center '><div class='cell'><span class='link-type'>"+result['shouseaddress']+"</span></div></td><td rowspan='1' colspan='1' class='el-table_4_column_32  status-col'><div class='cell'><span class='el-tag el-tag--info el-tag--medium'>"+result['snation']+"</span></div></td><td rowspan='1' colspan='1' class='el-table_4_column_33 is-center small-padding fixed-width'><div class='cell'><button type='button' class='el-button el-button--primary el-button--mini'><span>编辑</span></button><button type='button' class='el-button el-button--danger el-button--mini'><span>删除</span></button></div></td></tr>"
+    })
+    item+="</tbody>"
+    $("#table_body_colgroup").after(item)
 }

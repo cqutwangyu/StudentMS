@@ -42,9 +42,12 @@ public class StudentServlet extends HttpServlet {
     private void addStudent(HttpServletRequest request, HttpServletResponse response, PrintWriter pw) {
         String sno = request.getParameter("sno");
         String sname = request.getParameter("sname");
-        int sage = Integer.valueOf(request.getParameter("sage"));
+        String sdatebirth = request.getParameter("sdatebirth");
         String ssex = request.getParameter("ssex");
-        boolean result = StudentService.addStudent(sno, sname, sage, ssex);
+        String snativeplace = request.getParameter("snativeplace");
+        String shouseaddress = request.getParameter("shouseaddress");
+        String snation = request.getParameter("snation");
+        boolean result = StudentService.addStudent(sno, sname, sdatebirth, ssex,snativeplace,shouseaddress,snation);
         if(result){
             pw.write("添加成功");
         }else {
@@ -66,9 +69,12 @@ public class StudentServlet extends HttpServlet {
         String sno = request.getParameter("sno");
         String sno_old = request.getParameter("sno_old");
         String sname = request.getParameter("sname");
-        int sage = Integer.valueOf(request.getParameter("sage"));
+        String sdatebirth = request.getParameter("sdatebirth");
         String ssex = request.getParameter("ssex");
-        boolean result = StudentService.updateStudent(sno, sname, sage, ssex, sno_old);
+        String snativeplace = request.getParameter("snativeplace");
+        String shouseaddress = request.getParameter("shouseaddress");
+        String snation = request.getParameter("snation");
+        boolean result = StudentService.updateStudent(sno, sname, sdatebirth, ssex,snativeplace,shouseaddress,snation, sno_old);
         if (result) {
             pw.write("修改成功");
         } else {

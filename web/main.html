@@ -95,7 +95,7 @@
                 <!-- 表体 -->
                 <div class="el-table__body-wrapper is-scrolling-none">
                     <table cellspacing="0" cellpadding="0" border="0" class="el-table__body" style="width: 100%;">
-                        <colgroup>
+                        <colgroup id="table_body_colgroup">
                             <col name="el-table_4_column_26" width="12.5%">
                             <col name="el-table_4_column_27" width="12.5%">
                             <col name="el-table_4_column_28" width="12.5%">
@@ -105,7 +105,7 @@
                             <col name="el-table_4_column_32" width="12.5%">
                             <col name="el-table_4_column_33" width="12.5%">
                         </colgroup>
-                        <tbody>
+                        <tbody id="table_body">
                             <tr class="el-table__row">
                                 <td rowspan="1" colspan="1" class="el-table_4_column_26 is-center ">
                                     <div class="cell"><span>91621380216</span></div>
@@ -182,80 +182,84 @@
             <!-- 弹出对话框 -->
             <div class="el-dialog__wrapper" style="z-index: 2005;">
                 <div class="el-dialog" style="margin-top: 7vh;">
-                    <div class="el-dialog__header"><span class="el-dialog__title">编辑</span><button onclick="closeDialog()"
-                            type="button" aria-label="Close" class="el-dialog__headerbtn"><i class="el-dialog__close el-icon el-icon-close"></i></button></div>
+                    <!-- 弹窗头 -->
+                    <div class="el-dialog__header">
+                        <span class="el-dialog__title">弹窗</span>
+                        <button onclick="closeDialog()" type="button" aria-label="Close" class="el-dialog__headerbtn">
+                            <i class="el-dialog__close el-icon el-icon-close"></i>
+                        </button>
+                    </div>
+                    <!-- 弹窗体 -->
                     <div class="el-dialog__body">
                         <form class="el-form el-form--label-left" style="width: 400px; margin-left: 50px;">
-                            <div class="el-form-item is-required el-form-item--medium"><label for="type" class="el-form-item__label"
-                                    style="width: 70px;">学号</label>
-                                <div class="el-form-item__content" style="margin-left: 70px;">
-                                        <div class="el-input el-input--medium el-input--suffix">
-                                            <!----><input type="text" autocomplete="off" class="el-input__inner">
-                                            <!---->
-                                        </div>
-                                </div>
-                            </div>
-                            <div class="el-form-item is-required el-form-item--medium"><label for="timestamp" class="el-form-item__label"
-                                    style="width: 70px;">姓名</label>
-                                <div class="el-form-item__content" style="margin-left: 70px;">
-                                    <div class="el-date-editor el-input el-input--medium el-input--prefix el-input--suffix el-date-editor--datetime">
-                                        <!----><input type="text" autocomplete="off" class="el-input__inner">
+                            <div class="el-form-item is-required el-form-item--medium">
+                                <label for="type" class="el-form-item__label" style="width: 70px;">学号</label>
+                                <div class="el-form-item__content" style="margin-left: 80px;">
+                                    <div class="filter-item el-input el-input--medium" style="width: 200px;">
+                                        <input id="sno" class="el-input__inner" type="text">
                                     </div>
-                                    <!---->
                                 </div>
                             </div>
-                            <div class="el-form-item is-required el-form-item--medium"><label for="title" class="el-form-item__label"
-                                    style="width: 70px;">出生日期</label>
-                                <div class="el-form-item__content" style="margin-left: 70px;">
-                                    <div class="el-input el-input--medium">
-                                        <!----><input type="text" autocomplete="off" class="el-input__inner">
+                            <div class="el-form-item is-required el-form-item--medium">
+                                <label for="timestamp" class="el-form-item__label" style="width: 70px;">姓名</label>
+                                <div class="el-form-item__content" style="margin-left: 80px;">
+                                    <div class="filter-item el-input el-input--medium" style="width: 200px;">
+                                        <input id="sname" class="el-input__inner" type="text">
                                     </div>
-                                    <!---->
                                 </div>
                             </div>
-                            <div class="el-form-item el-form-item--medium"><label class="el-form-item__label" style="width: 70px;">性别</label>
+                            <div class="el-form-item is-required el-form-item--medium">
+                                <label for="title" class="el-form-item__label" style="width: 80px;">出生日期</label>
                                 <div class="el-form-item__content" style="margin-left: 70px;">
-                                        <div class="el-input el-input--medium el-input--suffix">
-                                            <!----><input type="text" autocomplete="off" class="el-input__inner">
-                                            <!---->
-                                        </div>
-                                </div>
-                            </div>
-                            <div class="el-form-item is-required el-form-item--medium"><label for="title" class="el-form-item__label"
-                                    style="width: 70px;">籍贯</label>
-                                <div class="el-form-item__content" style="margin-left: 70px;">
-                                    <div class="el-input el-input--medium">
-                                        <!----><input type="text" autocomplete="off" class="el-input__inner">
+                                    <div class="filter-item el-input el-input--medium" style="width: 200px;">
+                                        <input id="sdatebirth" class="el-input__inner" type="text">
                                     </div>
-                                    <!---->
                                 </div>
                             </div>
-                            <div class="el-form-item is-required el-form-item--medium"><label for="title" class="el-form-item__label"
-                                    style="width: 70px;">家庭地址</label>
-                                <div class="el-form-item__content" style="margin-left: 70px;">
-                                    <div class="el-input el-input--medium">
-                                        <!----><input type="text" autocomplete="off" class="el-input__inner">
+                            <div class="el-form-item is-required el-form-item--medium">
+                                <label class="el-form-item__label" style="width: 70px;">性别</label>
+                                <div class="el-form-item__content" style="margin-left: 80px;">
+                                    <div class="filter-item el-input el-input--medium" style="width: 200px;">
+                                        <input id="ssex" class="el-input__inner" type="text">
                                     </div>
-                                    <!---->
                                 </div>
                             </div>
-                            <div class="el-form-item is-required el-form-item--medium"><label for="title" class="el-form-item__label"
-                                    style="width: 70px;">民族</label>
-                                <div class="el-form-item__content" style="margin-left: 70px;">
-                                    <div class="el-input el-input--medium">
-                                        <!----><input type="text" autocomplete="off" class="el-input__inner">
+                            <div class="el-form-item is-required el-form-item--medium">
+                                <label for="title" class="el-form-item__label" style="width: 70px;">籍贯</label>
+                                <div class="el-form-item__content" style="margin-left: 80px;">
+                                    <div class="filter-item el-input el-input--medium" style="width: 200px;">
+                                        <input id="snativeplace"class="el-input__inner" type="text">
                                     </div>
-                                    <!---->
+                                </div>
+                            </div>
+                            <div class="el-form-item  el-form-item--medium">
+                                <label for="title" class="el-form-item__label" style="width: 80px;">家庭地址</label>
+                                <div class="el-form-item__content" style="margin-left: 70px;">
+                                    <div class="filter-item el-input el-input--medium" style="width: 200px;">
+                                        <input id="shouseaddress"class="el-input__inner" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="el-form-item el-form-item--medium">
+                                <label for="title" class="el-form-item__label" style="width: 70px;">民族</label>
+                                <div class="el-form-item__content" style="margin-left: 80px;">
+                                    <div class="filter-item el-input el-input--medium" style="width: 200px;">
+                                        <input id="snation"class="el-input__inner" type="text">
+                                    </div>
                                 </div>
                             </div>
                         </form>
                     </div>
+                    <!-- 弹窗尾部 -->
                     <div class="el-dialog__footer">
-                        <div class="dialog-footer"><button type="button" class="el-button el-button--default el-button--medium">
-                                <!---->
-                                <!----><span>取消</span></button> <button type="button" class="el-button el-button--primary el-button--medium">
-                                <!---->
-                                <!----><span>确认</span></button></div>
+                        <div class="dialog-footer">
+                            <button type="button" id="dialog_no" class="el-button el-button--default el-button--medium">
+                                <span>取消</span>
+                            </button>
+                            <button type="button" id="dialog_yes" class="el-button el-button--primary el-button--medium">
+                                <span>确认</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
