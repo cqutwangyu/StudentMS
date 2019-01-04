@@ -34,7 +34,7 @@ public class StudentDao {
     public static int updateStudent(Student s, String sno_old) {
         int rows = 0;
         Connection con = mDatabaseConnection.getConnection();
-        String sql = "update students set sno=?,sname=?,sage=?,ssex=? where sno=" + sno_old;
+        String sql = "update students set sno=?,sname=?,sdatebirth=?,ssex=? ,snativeplace=? ,shouseaddress=? ,snation=? where sno=" + sno_old;
         PreparedStatement pst = null;
         try {
             pst = con.prepareStatement(sql);
@@ -68,7 +68,7 @@ public class StudentDao {
             ResultSetMetaData metaData = rs.getMetaData();
             int columnCount = metaData.getColumnCount();
             //遍历
-            jsonArray=rsListToJsonArray(rs,jsonArray, metaData, columnCount);
+            jsonArray = rsListToJsonArray(rs, jsonArray, metaData, columnCount);
             rs.close();
             con.close();
         } catch (SQLException e) {
@@ -92,7 +92,7 @@ public class StudentDao {
             ResultSetMetaData metaData = rs.getMetaData();
             int columnCount = metaData.getColumnCount();
             //遍历
-            jsonArray=rsListToJsonArray(rs,jsonArray, metaData, columnCount);
+            jsonArray = rsListToJsonArray(rs, jsonArray, metaData, columnCount);
             rs.close();
             con.close();
         } catch (SQLException e) {

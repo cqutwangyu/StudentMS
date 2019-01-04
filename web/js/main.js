@@ -5,8 +5,17 @@ window.onload = function () {
 
 }
 function closeDialog() {
+    //隐藏对话框
     $(".el-dialog__wrapper").hide()
     $(".v-modal").hide()
+    //清空输入框
+    $("#sno").val(''),
+    $("#sname").val(''),
+    $("#sdatebirth").val(''),
+    $("#ssex").val(''),
+    $("#snativeplace").val(''),
+    $("#shouseaddress").val(''),
+    $("#snation").val('')
 }
 function selectUp() {
 
@@ -56,7 +65,7 @@ function selectUp() {
 function addStudent() {
     if ($(".el-dialog__wrapper").css("display") == "none") {
         $(".el-dialog__title").text("添加")
-        $("#dialog_yes").attr("onclick","addStudent()")
+        $("#dialog_yes").attr("onclick", "addStudent()")
         $(".el-dialog__wrapper").show()
         $(".v-modal").show()
         return
@@ -81,6 +90,7 @@ function addStudent() {
 
         },//再发送请求前调用的方法
         success: function (msg) {
+            closeDialog()
             alert(msg)
             clarJsonTable()
             load()
@@ -95,7 +105,7 @@ function addStudent() {
     });
 }
 
-function deleteStudent(e) {
+function deleteStudent(redSno) {
     $.ajax({
         url: 'StudentServlet', //要请求的url地址
         type: 'POST', //请求方法 GET or POST
@@ -103,7 +113,7 @@ function deleteStudent(e) {
         timeout: 5000, //请求超时的时间，以毫秒计
         data: {
             method: 'deleteStudent',
-            sno: e
+            sno: redSno
         }, //参数，用POST方法时使用，如果用GET方法则直接在url后拼接参数即可
         beforeSend: function () {
 
@@ -123,7 +133,22 @@ function deleteStudent(e) {
     });
 }
 
-function updateStudent() {
+function updateStudent(redSno) {
+    if ($(".el-dialog__wrapper").css("display") == "none") {
+        $(".el-dialog__title").text("编辑")
+        $("#dialog_yes").attr("onclick", "updateStudent("+redSno+")")
+        $(".el-dialog__wrapper").show()
+        $(".v-modal").show()
+        var row_spans=$("#"+redSno).find("span")
+        $("#sno").val(row_spans.eq(0).text()),
+        $("#sname").val(row_spans.eq(1).text()),
+        $("#sdatebirth").val(row_spans.eq(2).text()),
+        $("#ssex").val(row_spans.eq(3).text()),
+        $("#snativeplace").val(row_spans.eq(4).text()),
+        $("#shouseaddress").val(row_spans.eq(5).text()),
+        $("#snation").val(row_spans.eq(6).text())
+        return
+    }
     $.ajax({
         url: 'StudentServlet', //要请求的url地址
         type: 'POST', //请求方法 GET or POST
@@ -131,23 +156,27 @@ function updateStudent() {
         timeout: 5000, //请求超时的时间，以毫秒计
         data: {
             method: 'updateStudent',
-            sno_old: $("#sno_new").attr("sno_old"),
-            sno: $("#sno_new").val(),
-            sname: $("#sname_new").val(),
-            sage: $("#sage_new").val(),
-            ssex: $("#ssex_new").val(),
+            sno_old: redSno,
+            sno: $("#sno").val(),
+            sname: $("#sname").val(),
+            sdatebirth: $("#sdatebirth").val(),
+            ssex: $("#ssex").val(),
+            snativeplace: $("#snativeplace").val(),
+            shouseaddress: $("#shouseaddress").val(),
+            snation: $("#snation").val()
         }, //参数，用POST方法时使用，如果用GET方法则直接在url后拼接参数即可
         beforeSend: function () {
 
         },//再发送请求前调用的方法
         success: function (msg) {
+            closeDialog()
             alert(msg)
             clarJsonTable()
             load()
-            $(".editForm").css("display", "none")
+            // $(".editForm").css("display", "none")
         }, //请求成功时回调方法，data为服务器返回的数据
         error: function () {
-            alert("删除失败！")
+            alert("修改失败")
 
         }, //请求发生错误时调用方法
         complete: function () {
@@ -268,11 +297,11 @@ function showStudent(json) {
     // item += "</tbody><tfoot><tr><td><a>1</a><a>2</a></td></tr></tfoot>";
     // item += "</table>";
     // $(".json").append(item);
-    
-    var item="<tbody id='table_body'>"
-    $.each(json,function(i,result){
-        item+="<tr class='el-table__row'><td rowspan='1' colspan='1' class='el-table_4_column_26 is-center '><div class='cell'><span>"+result['sno']+"</span></div></td><td rowspan='1' colspan='1' class='el-table_4_column_27 is-center '><div class='cell'><span>"+result['sname']+"</span></div></td><td rowspan='1' colspan='1' class='el-table_4_column_28  '><div class='cell'><span class='link-type'>"+result['sdatebirth']+"</span> </div></td><td rowspan='1' colspan='1' class='el-table_4_column_29 is-center '><div class='cell'><span>"+result['ssex']+"</span></div></td><td rowspan='1' colspan='1' class='el-table_4_column_30  '><div class='cell'><span class='link-type'>"+result['snativeplace']+"</span></div></td><td rowspan='1' colspan='1' class='el-table_4_column_31 is-center '><div class='cell'><span class='link-type'>"+result['shouseaddress']+"</span></div></td><td rowspan='1' colspan='1' class='el-table_4_column_32  status-col'><div class='cell'><span class='el-tag el-tag--info el-tag--medium'>"+result['snation']+"</span></div></td><td rowspan='1' colspan='1' class='el-table_4_column_33 is-center small-padding fixed-width'><div class='cell'><button type='button' class='el-button el-button--primary el-button--mini'><span>编辑</span></button><button type='button' class='el-button el-button--danger el-button--mini'><span>删除</span></button></div></td></tr>"
+
+    var item = "<tbody id='table_body'>"
+    $.each(json, function (i, result) {
+        item += "<tr id='" + result['sno'] + "' class='el-table__row'><td rowspan='1' colspan='1' class='el-table_4_column_26 is-center '><div class='cell'><span>" + result['sno'] + "</span></div></td><td rowspan='1' colspan='1' class='el-table_4_column_27 is-center '><div class='cell'><span>" + result['sname'] + "</span></div></td><td rowspan='1' colspan='1' class='el-table_4_column_28  '><div class='cell'><span class='link-type'>" + result['sdatebirth'] + "</span> </div></td><td rowspan='1' colspan='1' class='el-table_4_column_29 is-center '><div class='cell'><span>" + result['ssex'] + "</span></div></td><td rowspan='1' colspan='1' class='el-table_4_column_30  '><div class='cell'><span class='link-type'>" + result['snativeplace'] + "</span></div></td><td rowspan='1' colspan='1' class='el-table_4_column_31 is-center '><div class='cell'><span class='link-type'>" + result['shouseaddress'] + "</span></div></td><td rowspan='1' colspan='1' class='el-table_4_column_32  status-col'><div class='cell'><span class='el-tag el-tag--info el-tag--medium'>" + result['snation'] + "</span></div></td><td rowspan='1' colspan='1' class='el-table_4_column_33 is-center small-padding fixed-width'><div class='cell'><button type='button' onclick='updateStudent(" + result['sno'] + ")' class='el-button el-button--primary el-button--mini'><span>编辑</span></button><button type='button'  onclick='deleteStudent(" + result['sno'] + ")' class='el-button el-button--danger el-button--mini'><span>删除</span></button></div></td></tr>"
     })
-    item+="</tbody>"
+    item += "</tbody>"
     $("#table_body_colgroup").after(item)
 }
