@@ -2,7 +2,6 @@
 window.onload = function () {
     load();
     selectUp();
-
 }
 function closeDialog() {
     //隐藏对话框
@@ -21,7 +20,7 @@ function selectUp() {
 
     var i //下拉框的箭头
     var div //下拉框的input的父元素
-    var input = $('.el-input__inner') //下拉框的input
+    var input = $('#search') //下拉框的input
     var dropdown = $(".el-select-dropdown") //下拉框内容的body
     var s = $(".el-select") //下拉框的body
     $("#select-dropdown").click(function () {
@@ -56,6 +55,9 @@ function selectUp() {
         div.removeClass('is-focus')
         dropdown.slideUp("slow")
         input.attr('key', $(this).attr('key'))
+        if(input.attr('key')=='sdatebirth'){
+            $("#search_text").attr("type","date")
+        }
     })
     $(".el-select-dropdown__list li").hover(function () {
         $(this).siblings('li').removeClass('hover')
@@ -90,7 +92,9 @@ function addStudent() {
 
         },//再发送请求前调用的方法
         success: function (msg) {
-            closeDialog()
+            if(msg=="添加成功"){
+                closeDialog()
+            }
             alert(msg)
             clarJsonTable()
             load()
@@ -169,7 +173,9 @@ function updateStudent(redSno) {
 
         },//再发送请求前调用的方法
         success: function (msg) {
-            closeDialog()
+            if(msg=="修改成功"){
+                closeDialog()
+            }
             alert(msg)
             clarJsonTable()
             load()
@@ -201,19 +207,13 @@ function searchStudent() {
 
         },//再发送请求前调用的方法
         success: function (json) {
-            console.info(json.length)
             if (json.length > 0) {
                 clarJsonTable()
                 showStudent(json)
-            } else {
-                alert("查询失败")
-                clarJsonTable()
-                load()
             }
         }, //请求成功时回调方法，data为服务器返回的数据
-        error: function () {
-            alert("查询失败！")
-
+        error: function (msg) {
+            alert(msg.responseText)
         }, //请求发生错误时调用方法
         complete: function () {
 

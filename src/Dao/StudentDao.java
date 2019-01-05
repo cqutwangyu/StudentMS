@@ -61,7 +61,7 @@ public class StudentDao {
         JSONArray jsonArray = new JSONArray();
         try {
             stmt = con.createStatement();
-            String sql = "select * from students where " + k + "='" + v + "'";
+            String sql = "select * from students where " + k + " like '%" + v + "%'";
             rs = stmt.executeQuery(sql);
             //json数组
             //得到rs列数

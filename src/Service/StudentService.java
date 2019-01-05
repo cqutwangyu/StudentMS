@@ -9,7 +9,14 @@ public class StudentService {
     public static boolean addStudent(String sno, String sname, String sdatebirth, String ssex, String snativeplace, String shouseaddress, String snation) {
         boolean result;
         //如果返回值大于0则为true，否则为false
-        result = StudentDao.insert(new Student(sno, sname, sdatebirth, ssex,snativeplace,shouseaddress,snation)) > 0 ? true : false;
+         result = StudentDao.insert(new Student(sno, sname, sdatebirth, ssex,snativeplace,shouseaddress,snation)) > 0 ? true : false;
+        return result;
+    }
+
+    public static boolean isExist(String sno){
+        boolean result;
+        result=(StudentDao.queryStudents("sno", sno).length()>0)?true:false;
+        System.out.println(StudentDao.queryStudents("sno", sno).length());
         return result;
     }
 

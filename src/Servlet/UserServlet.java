@@ -33,6 +33,14 @@ public class UserServlet extends HttpServlet {
     private void userLogin(HttpServletRequest request, HttpServletResponse response,PrintWriter pw) throws IOException, ServletException {
         String user = request.getParameter("userName");
         String pasw = request.getParameter("userPassword");
+        if(user.length()<8){
+            pw.write("用户名必须大于8位");
+            return;
+        }
+        if(pasw.length()<6){
+            pw.write("密码必须大于6位");
+            return;
+        }
         if (UserService.login(user, pasw)) {
             pw.write("登录成功");
         } else {
@@ -43,10 +51,18 @@ public class UserServlet extends HttpServlet {
     private void userRegister(HttpServletRequest request, HttpServletResponse response,PrintWriter pw) throws IOException {
         String user = request.getParameter("userName");
         String pasw = request.getParameter("userPassword");
+        if(user.length()<8){
+            pw.write("用户名必须大于8位");
+            return;
+        }
+        if(pasw.length()<6){
+            pw.write("密码必须大于6位");
+            return;
+        }
         if (UserService.register(user, pasw)) {
             pw.write("注册成功");
         } else {
-            pw.write("注册失败");
+            pw.write("用户名已存在");
         }
     }
 

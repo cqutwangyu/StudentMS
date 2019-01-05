@@ -47,6 +47,14 @@ public class StudentServlet extends HttpServlet {
         String snativeplace = request.getParameter("snativeplace");
         String shouseaddress = request.getParameter("shouseaddress");
         String snation = request.getParameter("snation");
+        if(sno.length()<6){
+            pw.write("学号必须大于6位");
+            return;
+        }
+        if(StudentService.isExist(sno)==true){
+            pw.write("学号已存在");
+            return;
+        }
         boolean result = StudentService.addStudent(sno, sname, sdatebirth, ssex,snativeplace,shouseaddress,snation);
         if(result){
             pw.write("添加成功");
@@ -74,6 +82,10 @@ public class StudentServlet extends HttpServlet {
         String snativeplace = request.getParameter("snativeplace");
         String shouseaddress = request.getParameter("shouseaddress");
         String snation = request.getParameter("snation");
+        if(sno.length()<6){
+            pw.write("学号必须大于6位");
+            return;
+        }
         boolean result = StudentService.updateStudent(sno, sname, sdatebirth, ssex,snativeplace,shouseaddress,snation, sno_old);
         if (result) {
             pw.write("修改成功");
@@ -85,6 +97,15 @@ public class StudentServlet extends HttpServlet {
     private void qureyStudent(HttpServletRequest request, HttpServletResponse response, PrintWriter pw) throws UnsupportedEncodingException {
         String key = request.getParameter("key");
         String value = request.getParameter("value");
+        if(key==null||key.length()<1||key.equals("null")){
+            pw.write("请选择索引字段");
+            return;
+        }
+        if(value==null||value.length()<1){
+            pw.write("请输入搜索内容");
+            return;
+        }
+        System.out.println(333);
         JSONArray jsonArray = StudentService.queryStudent(key,value);
         pw.write(jsonArray.toString());
     }
