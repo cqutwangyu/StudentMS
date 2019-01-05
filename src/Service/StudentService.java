@@ -6,6 +6,9 @@ import org.json.JSONArray;
 
 public class StudentService {
 
+    public static void initDB(){
+        StudentDao.initDateStudentDB();
+    }
     public static boolean addStudent(String sno, String sname, String sdatebirth, String ssex, String snativeplace, String shouseaddress, String snation) {
         boolean result;
         //如果返回值大于0则为true，否则为false

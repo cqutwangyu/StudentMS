@@ -9,6 +9,20 @@ import java.sql.*;
 
 public class StudentDao {
 
+    public static void initDateStudentDB(){
+        Connection con = mDatabaseConnection.getConnection();
+        try {
+            Statement stms=con.createStatement();
+            stms.addBatch("INSERT INTO `students` VALUES ('100001', '王浩', '1998-05-02', '男', '重庆', '地址地址地址', '汉族');");
+            stms.addBatch("INSERT INTO `students` VALUES ('100002', '张洋', '1999-12-01', '女', '四川', '地址地址地址', '汉族');");
+            stms.addBatch("INSERT INTO `students` VALUES ('100003', '李航', '1996-01-21', '男', '北京', '地址地址地址', '汉族');");
+            stms.addBatch("INSERT INTO `students` VALUES ('100004', '吴辉', '1997-03-01', '男', '上海', '地址地址地址', '汉族');");
+            stms.addBatch("INSERT INTO `students` VALUES ('100005', '常鑫', '1996-01-06', '男', '西安', '地址地址地址', '汉族');");
+            stms.executeBatch();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
     public static int insert(Student s) {
         Connection con = mDatabaseConnection.getConnection();
         String sql = "insert into students values(?,?,?,?,?,?,?)";

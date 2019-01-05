@@ -47,28 +47,28 @@ public class StudentServlet extends HttpServlet {
         String snativeplace = request.getParameter("snativeplace");
         String shouseaddress = request.getParameter("shouseaddress");
         String snation = request.getParameter("snation");
-        if(sno.length()<6){
+        if (sno.length() < 6) {
             pw.write("学号必须大于6位");
             return;
         }
-        if(StudentService.isExist(sno)==true){
+        if (StudentService.isExist(sno) == true) {
             pw.write("学号已存在");
             return;
         }
-        boolean result = StudentService.addStudent(sno, sname, sdatebirth, ssex,snativeplace,shouseaddress,snation);
-        if(result){
+        boolean result = StudentService.addStudent(sno, sname, sdatebirth, ssex, snativeplace, shouseaddress, snation);
+        if (result) {
             pw.write("添加成功");
-        }else {
+        } else {
             pw.write("添加失败");
         }
     }
 
     private void deleteStudent(HttpServletRequest request, HttpServletResponse response, PrintWriter pw) {
         String sno = request.getParameter("sno");
-        boolean result=StudentService.deleteStudent(sno);
-        if(result){
+        boolean result = StudentService.deleteStudent(sno);
+        if (result) {
             pw.write("删除成功");
-        }else {
+        } else {
             pw.write("删除失败");
         }
     }
@@ -82,11 +82,11 @@ public class StudentServlet extends HttpServlet {
         String snativeplace = request.getParameter("snativeplace");
         String shouseaddress = request.getParameter("shouseaddress");
         String snation = request.getParameter("snation");
-        if(sno.length()<6){
+        if (sno.length() < 6) {
             pw.write("学号必须大于6位");
             return;
         }
-        boolean result = StudentService.updateStudent(sno, sname, sdatebirth, ssex,snativeplace,shouseaddress,snation, sno_old);
+        boolean result = StudentService.updateStudent(sno, sname, sdatebirth, ssex, snativeplace, shouseaddress, snation, sno_old);
         if (result) {
             pw.write("修改成功");
         } else {
@@ -97,21 +97,24 @@ public class StudentServlet extends HttpServlet {
     private void qureyStudent(HttpServletRequest request, HttpServletResponse response, PrintWriter pw) throws UnsupportedEncodingException {
         String key = request.getParameter("key");
         String value = request.getParameter("value");
-        if(key==null||key.length()<1||key.equals("null")){
+        if (key == null || key.length() < 1 || key.equals("null")) {
             pw.write("请选择索引字段");
             return;
         }
-        if(value==null||value.length()<1){
+        if (value == null || value.length() < 1) {
             pw.write("请输入搜索内容");
             return;
         }
         System.out.println(333);
-        JSONArray jsonArray = StudentService.queryStudent(key,value);
+        JSONArray jsonArray = StudentService.queryStudent(key, value);
         pw.write(jsonArray.toString());
     }
 
     private void loadStudent(HttpServletRequest request, HttpServletResponse response, PrintWriter pw) {
-        JSONArray jsonArray=StudentService.queryStudents();
+        JSONArray jsonArray = StudentService.queryStudents();
+        if (jsonArray.length() < 1) {
+            StudentService.initDB();
+        }
         pw.write(jsonArray.toString());
     }
 
