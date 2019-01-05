@@ -12,8 +12,7 @@
 }
 .background_img{
     position: absolute;
-    width: 1536px;
-    height: 1022px;
+    width: 100%;
     top: -149.5px;
     left: 0;
     z-index: -1;
@@ -25,8 +24,8 @@
     background-color: white;
     width: 418px;
     height: 316px;
-    left: 789px;
-    bottom: -118px;
+    left: 52%;
+    top: 118px;
 }
 .login_title{
     font-size: 20px;

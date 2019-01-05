@@ -2,7 +2,6 @@ package Servlet;
 
 import Service.UserService;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -41,10 +40,14 @@ public class UserServlet extends HttpServlet {
             pw.write("密码必须大于6位");
             return;
         }
+        if(UserService.ifUserNameNotExist(user)==true){
+            pw.write("用户名不存在");
+            return;
+        }
         if (UserService.login(user, pasw)) {
             pw.write("登录成功");
         } else {
-            pw.write("登录失败");
+            pw.write("密码错误");
         }
     }
 

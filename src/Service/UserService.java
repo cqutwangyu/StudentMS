@@ -7,7 +7,7 @@ public class UserService {
     public static boolean register(String u, String p) {
         boolean result;
         //如果返回值大于0则为true，否则为false
-        if (ifUserNameExist(u)){
+        if (ifUserNameNotExist(u)){
             result = UserDao.add(new User(u, p)) > 0 ? true : false;
         }else {
             result=false;
@@ -15,7 +15,7 @@ public class UserService {
         return result;
     }
 
-    public static boolean ifUserNameExist(String u){
+    public static boolean ifUserNameNotExist(String u){
         boolean result;
         result=UserDao.queryUser(u)==null?true:false;
         return result;
