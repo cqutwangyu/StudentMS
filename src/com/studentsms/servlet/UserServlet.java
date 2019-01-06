@@ -1,6 +1,6 @@
-package servlet;
+package com.studentsms.servlet;
 
-import service.UserService;
+import com.studentsms.service.UserService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

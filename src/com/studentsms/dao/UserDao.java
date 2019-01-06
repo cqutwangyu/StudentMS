@@ -1,7 +1,7 @@
-package dao;
+package com.studentsms.dao;
 
-import entity.User;
-import util.MyDatabaseConnection;
+import com.studentsms.entity.User;
+import com.studentsms.util.MyDatabaseConnection;
 
 import java.sql.*;
 

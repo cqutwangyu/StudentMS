@@ -2976,40 +2976,52 @@ rm_roleid</ColNames>
     </column>
     <column id="584" parent="255" name="sname">
       <Position>2</Position>
-      <DataType>varchar(10)|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="585" parent="255" name="sage">
+    <column id="585" parent="255" name="sdatebirth">
       <Position>3</Position>
-      <DataType>tinyint(3)|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>date|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="586" parent="255" name="ssex">
       <Position>4</Position>
-      <DataType>char(2)|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="587" parent="255" name="PRIMARY">
+    <column id="587" parent="255" name="snativeplace">
+      <Position>5</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="588" parent="255" name="shouseaddress">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="589" parent="255" name="snation">
+      <Position>7</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="590" parent="255" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>sno</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="588" parent="256" name="username">
+    <column id="591" parent="256" name="username">
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="589" parent="256" name="password">
+    <column id="592" parent="256" name="password">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="590" parent="256" name="PRIMARY">
+    <key id="593" parent="256" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>username</ColNames>
       <Primary>1</Primary>
