@@ -7,7 +7,7 @@
 
 前端：html、css、JavaScript、jquery、ajax
 
-后端：java、jdbc、Servlet、org.json
+后端：java、jdbc、servlet、org.json
 
 数据库:mysql、Navicat for MySQL
 

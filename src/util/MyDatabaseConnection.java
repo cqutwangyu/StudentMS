@@ -1,15 +1,22 @@
-package Util;
+package util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class mDatabaseConnection {
+/**
+ * @author WangYu
+ */
+public class MyDatabaseConnection {
 
-    // JDBC数据库驱动服务和URL
+    /**
+     * JDBC数据库驱动服务和URL
+     */
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://localhost:3306/db-studentms?useUnicode=true&characterEncoding=UTF-8&useSSL=false";
-    //  数据库帐号密码
+    /**
+     * 数据库帐号密码
+     */
     static final String USER = "root";
     static final String PASS = "shenger";
 

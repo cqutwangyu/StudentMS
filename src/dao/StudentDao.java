@@ -1,16 +1,19 @@
-package Dao;
+package dao;
 
-import Entity.Student;
-import Util.mDatabaseConnection;
+import entity.Student;
+import util.MyDatabaseConnection;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.sql.*;
 
+/**
+ * @author WangYu
+ */
 public class StudentDao {
 
     public static void initDateStudentDB(){
-        Connection con = mDatabaseConnection.getConnection();
+        Connection con = MyDatabaseConnection.getConnection();
         try {
             Statement stms=con.createStatement();
             stms.addBatch("INSERT INTO `students` VALUES ('100001', '王浩', '1998-05-02', '男', '重庆', '地址地址地址', '汉族');");
@@ -24,7 +27,7 @@ public class StudentDao {
         }
     }
     public static int insert(Student s) {
-        Connection con = mDatabaseConnection.getConnection();
+        Connection con = MyDatabaseConnection.getConnection();
         String sql = "insert into students values(?,?,?,?,?,?,?)";
         int rows = 0;
         PreparedStatement pst = null;
@@ -45,10 +48,10 @@ public class StudentDao {
         return rows;
     }
 
-    public static int updateStudent(Student s, String sno_old) {
+    public static int updateStudent(Student s, String snoOld) {
         int rows = 0;
-        Connection con = mDatabaseConnection.getConnection();
-        String sql = "update students set sno=?,sname=?,sdatebirth=?,ssex=? ,snativeplace=? ,shouseaddress=? ,snation=? where sno=" + sno_old;
+        Connection con = MyDatabaseConnection.getConnection();
+        String sql = "update students set sno=?,sname=?,sdatebirth=?,ssex=? ,snativeplace=? ,shouseaddress=? ,snation=? where sno=" + snoOld;
         PreparedStatement pst = null;
         try {
             pst = con.prepareStatement(sql);
@@ -69,7 +72,7 @@ public class StudentDao {
     }
 
     public static JSONArray queryStudents(String k, String v) {
-        Connection con = mDatabaseConnection.getConnection();
+        Connection con = MyDatabaseConnection.getConnection();
         Statement stmt = null;
         ResultSet rs = null;
         JSONArray jsonArray = new JSONArray();
@@ -93,7 +96,7 @@ public class StudentDao {
     }
 
     public static JSONArray queryStudents() {
-        Connection con = mDatabaseConnection.getConnection();
+        Connection con = MyDatabaseConnection.getConnection();
         Statement stmt = null;
         ResultSet rs = null;
         JSONArray jsonArray = new JSONArray();
@@ -131,7 +134,7 @@ public class StudentDao {
 
     public static int deleteStudent(String sno) {
         int rows = 0;
-        Connection con = mDatabaseConnection.getConnection();
+        Connection con = MyDatabaseConnection.getConnection();
         Statement stmt = null;
 
         try {

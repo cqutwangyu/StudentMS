@@ -1,5 +1,8 @@
-package Entity;
+package entity;
 
+/**
+ * @author WangYu
+ */
 public class User {
 
     private String username;

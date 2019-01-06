@@ -1,9 +1,12 @@
-package Service;
+package service;
 
-import Dao.StudentDao;
-import Entity.Student;
+import dao.StudentDao;
+import entity.Student;
 import org.json.JSONArray;
 
+/**
+ * @author WangYu
+ */
 public class StudentService {
 
     public static void initDB(){
@@ -35,8 +38,8 @@ public class StudentService {
         return StudentDao.deleteStudent(sno) > 0 ? true : false;
     }
 
-    public static boolean updateStudent(String sno, String sname, String sdatebirth, String ssex, String snativeplace, String shouseaddress, String snation, String sno_old) {
-        return StudentDao.updateStudent(new Student(sno, sname, sdatebirth, ssex,snativeplace,shouseaddress,snation), sno_old) > 0 ? true : false;
+    public static boolean updateStudent(String sno, String sname, String sdatebirth, String ssex, String snativeplace, String shouseaddress, String snation, String snoOld) {
+        return StudentDao.updateStudent(new Student(sno, sname, sdatebirth, ssex,snativeplace,shouseaddress,snation), snoOld) > 0 ? true : false;
     }
 
 }

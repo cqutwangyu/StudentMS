@@ -1,8 +1,11 @@
-package Service;
+package service;
 
-import Dao.UserDao;
-import Entity.User;
+import dao.UserDao;
+import entity.User;
 
+/**
+ * @author WangYu
+ */
 public class UserService {
     public static boolean register(String u, String p) {
         boolean result;

@@ -1,14 +1,17 @@
-package Dao;
+package dao;
 
-import Entity.User;
-import Util.mDatabaseConnection;
+import entity.User;
+import util.MyDatabaseConnection;
 
 import java.sql.*;
 
+/**
+ * @author WangYu
+ */
 public class UserDao {
 
     public static int add(User u) {
-        Connection con = mDatabaseConnection.getConnection();
+        Connection con = MyDatabaseConnection.getConnection();
         String sql = "insert into users values(?,?)";
         PreparedStatement pst = null;
         int rows = 0;
@@ -26,7 +29,7 @@ public class UserDao {
     }
 
     public static User queryUser(String username) {
-        Connection con = mDatabaseConnection.getConnection();
+        Connection con = MyDatabaseConnection.getConnection();
         Statement stmt = null;
         ResultSet rs = null;
         User user = null;

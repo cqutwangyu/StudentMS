@@ -1,6 +1,6 @@
-package Servlet;
+package servlet;
 
-import Service.UserService;
+import service.UserService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,8 +10,15 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/**
+ * @author WangYu
+ */
 @WebServlet(name = "UserServlet",urlPatterns = "/UserServlet")
 public class UserServlet extends HttpServlet {
+
+    private final int MIN_USER_NAME=8;
+    private final int MIN_USER_PASSWORD=6;
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
@@ -26,21 +33,22 @@ public class UserServlet extends HttpServlet {
             case  "userLogin":
                 userLogin(request,response,pw);
                 break;
+                default:
         }
     }
 
     private void userLogin(HttpServletRequest request, HttpServletResponse response,PrintWriter pw) throws IOException, ServletException {
         String user = request.getParameter("userName");
         String pasw = request.getParameter("userPassword");
-        if(user.length()<8){
+        if(user.length()< MIN_USER_NAME){
             pw.write("用户名必须大于8位");
             return;
         }
-        if(pasw.length()<6){
+        if(pasw.length()< MIN_USER_PASSWORD){
             pw.write("密码必须大于6位");
             return;
         }
-        if(UserService.ifUserNameNotExist(user)==true){
+        if(UserService.ifUserNameNotExist(user)){
             pw.write("用户名不存在");
             return;
         }
@@ -54,11 +62,11 @@ public class UserServlet extends HttpServlet {
     private void userRegister(HttpServletRequest request, HttpServletResponse response,PrintWriter pw) throws IOException {
         String user = request.getParameter("userName");
         String pasw = request.getParameter("userPassword");
-        if(user.length()<8){
+        if(user.length()<MIN_USER_NAME){
             pw.write("用户名必须大于8位");
             return;
         }
-        if(pasw.length()<6){
+        if(pasw.length()<MIN_USER_PASSWORD){
             pw.write("密码必须大于6位");
             return;
         }
@@ -69,6 +77,7 @@ public class UserServlet extends HttpServlet {
         }
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request,response);
     }
