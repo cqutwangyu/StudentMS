@@ -1,4 +1,4 @@
-package com.studentsms.util;
+package com.studentsm.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,7 +1,7 @@
-package com.studentsms.service;
+package com.studentsm.service;
 
-import com.studentsms.dao.UserDao;
-import com.studentsms.entity.User;
+import com.studentsm.dao.UserDao;
+import com.studentsm.entity.User;
 
 /**
  * @author WangYu

@@ -1,7 +1,7 @@
-package com.studentsms.service;
+package com.studentsm.service;
 
-import com.studentsms.dao.StudentDao;
-import com.studentsms.entity.Student;
+import com.studentsm.dao.StudentDao;
+import com.studentsm.entity.Student;
 import org.json.JSONArray;
 
 /**

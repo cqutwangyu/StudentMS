@@ -1,4 +1,4 @@
-package com.studentsms.entity;
+package com.studentsm.entity;
 
 /**
  * @author WangYu

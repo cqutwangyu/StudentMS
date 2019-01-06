@@ -1,7 +1,7 @@
-package com.studentsms.dao;
+package com.studentsm.dao;
 
-import com.studentsms.entity.Student;
-import com.studentsms.util.MyDatabaseConnection;
+import com.studentsm.entity.Student;
+import com.studentsm.util.MyDatabaseConnection;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

@@ -5,7 +5,7 @@
       <element id="dir-copy" path="$PROJECT_DIR$/web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="StudentsMS" />
+          <element id="module-output" name="StudentMS" />
         </element>
       </element>
     </root>

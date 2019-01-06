@@ -1,7 +1,7 @@
-package com.studentsms.servlet;
+package com.studentsm.servlet;
 
 import org.json.JSONArray;
-import com.studentsms.service.StudentService;
+import com.studentsm.service.StudentService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
