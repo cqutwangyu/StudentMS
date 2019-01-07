@@ -24,7 +24,8 @@ public class UserServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String method=request.getParameter("method");
         PrintWriter pw=response.getWriter();
-        System.out.println(method);
+        System.out.println("收到的请求method：" + method);
+        // 根据不同的method调用不同的方法
         switch (method)
         {
             case "userRegister":
@@ -37,6 +38,9 @@ public class UserServlet extends HttpServlet {
         }
     }
 
+    /**
+     * 用户登录
+     */
     private void userLogin(HttpServletRequest request, HttpServletResponse response,PrintWriter pw) throws IOException, ServletException {
         String user = request.getParameter("userName");
         String pasw = request.getParameter("userPassword");
@@ -59,6 +63,9 @@ public class UserServlet extends HttpServlet {
         }
     }
 
+    /**
+     * 用户注册
+     */
     private void userRegister(HttpServletRequest request, HttpServletResponse response,PrintWriter pw) throws IOException {
         String user = request.getParameter("userName");
         String pasw = request.getParameter("userPassword");

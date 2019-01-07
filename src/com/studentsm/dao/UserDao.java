@@ -9,7 +9,11 @@ import java.sql.*;
  * @author WangYu
  */
 public class UserDao {
-
+    /**
+     * 插入一条用户信息
+     * @param u 用户对象
+     * @return
+     */
     public static int add(User u) {
         Connection con = MyDatabaseConnection.getConnection();
         String sql = "insert into users values(?,?)";
@@ -28,6 +32,11 @@ public class UserDao {
         return rows;
     }
 
+    /**
+     * 查询用户
+     * @param username 用户名字段的值
+     * @return 返回一个用户对象
+     */
     public static User queryUser(String username) {
         Connection con = MyDatabaseConnection.getConnection();
         Statement stmt = null;

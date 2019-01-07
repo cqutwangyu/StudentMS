@@ -17,14 +17,17 @@ import java.io.UnsupportedEncodingException;
  */
 @WebServlet(name = "StudentServlet", urlPatterns = "/StudentServlet")
 public class StudentServlet extends HttpServlet {
-    private final int MIN_STUDENT_SNO=6;
+    // 学生的学号长度限制
+    private final int MIN_STUDENT_SNO_LENGTH = 6;
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         String method = request.getParameter("method");
         PrintWriter pw = response.getWriter();
-        System.out.println(method);
+        System.out.println("收到的请求method：" + method);
+        // 根据不同的method调用不同的方法
         switch (method) {
             case "addStudent":
                 addStudent(request, response, pw);
@@ -41,12 +44,15 @@ public class StudentServlet extends HttpServlet {
             case "loadStudent":
                 loadStudent(request, response, pw);
                 break;
-                default:
+            default:
 
         }
 
     }
 
+    /**
+     * 插入一条学生信息
+     */
     private void addStudent(HttpServletRequest request, HttpServletResponse response, PrintWriter pw) {
         String sno = request.getParameter("sno");
         String sname = request.getParameter("sname");
@@ -55,8 +61,8 @@ public class StudentServlet extends HttpServlet {
         String snativeplace = request.getParameter("snativeplace");
         String shouseaddress = request.getParameter("shouseaddress");
         String snation = request.getParameter("snation");
-        if (sno.length() < MIN_STUDENT_SNO) {
-            pw.write("学号必须大于6位");
+        if (sno.length() == MIN_STUDENT_SNO_LENGTH) {
+            pw.write("学号必须为6位");
             return;
         }
         if (StudentService.isExist(sno)) {
@@ -71,6 +77,9 @@ public class StudentServlet extends HttpServlet {
         }
     }
 
+    /**
+     * 删除学号为sno的学生信息
+     */
     private void deleteStudent(HttpServletRequest request, HttpServletResponse response, PrintWriter pw) {
         String sno = request.getParameter("sno");
         boolean result = StudentService.deleteStudent(sno);
@@ -81,6 +90,9 @@ public class StudentServlet extends HttpServlet {
         }
     }
 
+    /**
+     * 修改学号为snoOld的学生信息
+     */
     private void updateStudent(HttpServletRequest request, HttpServletResponse response, PrintWriter pw) {
         String sno = request.getParameter("sno");
         String snoOld = request.getParameter("sno_old");
@@ -90,8 +102,8 @@ public class StudentServlet extends HttpServlet {
         String snativeplace = request.getParameter("snativeplace");
         String shouseaddress = request.getParameter("shouseaddress");
         String snation = request.getParameter("snation");
-        if (sno.length() < MIN_STUDENT_SNO) {
-            pw.write("学号必须大于6位");
+        if (sno.length() < MIN_STUDENT_SNO_LENGTH) {
+            pw.write("学号必须为6位");
             return;
         }
         boolean result = StudentService.updateStudent(sno, sname, sdatebirth, ssex, snativeplace, shouseaddress, snation, snoOld);
@@ -102,6 +114,9 @@ public class StudentServlet extends HttpServlet {
         }
     }
 
+    /**
+     * 查询key字段的值包含value的学生信息
+     */
     private void qureyStudent(HttpServletRequest request, HttpServletResponse response, PrintWriter pw) throws UnsupportedEncodingException {
         String key = request.getParameter("key");
         String value = request.getParameter("value");
@@ -118,6 +133,9 @@ public class StudentServlet extends HttpServlet {
         pw.write(jsonArray.toString());
     }
 
+    /**
+     * 读取数据库中所有学生信息
+     */
     private void loadStudent(HttpServletRequest request, HttpServletResponse response, PrintWriter pw) {
         JSONArray jsonArray = StudentService.queryStudents();
         if (jsonArray.length() < 1) {

@@ -12,6 +12,9 @@ import java.sql.*;
  */
 public class StudentDao {
 
+    /**
+     * 初始化数据库中的测试数据
+     */
     public static void initDateStudentDB(){
         Connection con = MyDatabaseConnection.getConnection();
         try {
@@ -26,6 +29,12 @@ public class StudentDao {
             e.printStackTrace();
         }
     }
+
+    /**
+     * 插入一条学生信息
+     * @param s 学生信息存储对象
+     * @return
+     */
     public static int insert(Student s) {
         Connection con = MyDatabaseConnection.getConnection();
         String sql = "insert into students values(?,?,?,?,?,?,?)";
@@ -48,6 +57,12 @@ public class StudentDao {
         return rows;
     }
 
+    /**
+     * 修改一条学生信息
+     * @param s 修改信息后的学生对象
+     * @param snoOld 被修改的学生对象原学号
+     * @return
+     */
     public static int updateStudent(Student s, String snoOld) {
         int rows = 0;
         Connection con = MyDatabaseConnection.getConnection();
@@ -71,6 +86,12 @@ public class StudentDao {
         return rows;
     }
 
+    /**
+     * 查询数据库中的students表，根据k字段查询包含v数据的记录
+     * @param k 查询字段
+     * @param v 查询值
+     * @return
+     */
     public static JSONArray queryStudents(String k, String v) {
         Connection con = MyDatabaseConnection.getConnection();
         Statement stmt = null;
@@ -95,6 +116,10 @@ public class StudentDao {
 
     }
 
+    /**
+     * 查询所有学生信息
+     * @return 返回一个包含所有学生信息的json数组
+     */
     public static JSONArray queryStudents() {
         Connection con = MyDatabaseConnection.getConnection();
         Statement stmt = null;
@@ -119,6 +144,15 @@ public class StudentDao {
 
     }
 
+    /**
+     *  将ResultSet得到的sql查询结果存储到json数组中
+     * @param rs 数据库操作后返回的结果
+     * @param jsonArray 存储数据的json数组
+     * @param metaData rs数据集
+     * @param columnCount rs的列数
+     * @return json数组
+     * @throws SQLException
+     */
     private static JSONArray rsListToJsonArray(ResultSet rs, JSONArray jsonArray, ResultSetMetaData metaData, int columnCount) throws SQLException {
         while (rs.next()) {
             JSONObject jsonObject = new JSONObject();
@@ -132,6 +166,11 @@ public class StudentDao {
         return jsonArray;
     }
 
+    /**
+     * 删除一条学生记录
+     * @param sno 被删除学生的学号
+     * @return
+     */
     public static int deleteStudent(String sno) {
         int rows = 0;
         Connection con = MyDatabaseConnection.getConnection();

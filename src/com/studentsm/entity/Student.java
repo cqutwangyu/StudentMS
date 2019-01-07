@@ -61,6 +61,16 @@ public class Student {
         this.snation = snation;
     }
 
+    /**
+     * 学生对象
+     * @param sno 学号
+     * @param sname 姓名
+     * @param sdatebirth 出生日期
+     * @param ssex 性别
+     * @param snativeplace 籍贯
+     * @param shouseaddress 家庭地址
+     * @param snation 民族
+     */
     public Student(String sno, String sname, String sdatebirth, String ssex, String snativeplace, String shouseaddress, String snation) {
         this.sno = sno;
         this.sname = sname;

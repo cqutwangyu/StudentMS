@@ -20,6 +20,10 @@ public class MyDatabaseConnection {
     private static final String USER = "root";
     private static final String PASS = "shenger";
 
+    /**
+     * 获取数据库连接对象
+     * @return 返回数据库连接对象
+     */
     public static Connection getConnection() {
         Connection con = null;
         try {
