@@ -15,13 +15,13 @@ public class StudentService {
     public static boolean addStudent(String sno, String sname, String sdatebirth, String ssex, String snativeplace, String shouseaddress, String snation) {
         boolean result;
         //如果返回值大于0则为true，否则为false
-         result = StudentDao.insert(new Student(sno, sname, sdatebirth, ssex,snativeplace,shouseaddress,snation)) > 0 ? true : false;
+         result = StudentDao.insert(new Student(sno, sname, sdatebirth, ssex, snativeplace, shouseaddress, snation)) > 0;
         return result;
     }
 
     public static boolean isExist(String sno){
         boolean result;
-        result=(StudentDao.queryStudents("sno", sno).length()>0)?true:false;
+        result= StudentDao.queryStudents("sno", sno).length() > 0;
         System.out.println(StudentDao.queryStudents("sno", sno).length());
         return result;
     }
@@ -35,11 +35,11 @@ public class StudentService {
     }
 
     public static boolean deleteStudent(String sno) {
-        return StudentDao.deleteStudent(sno) > 0 ? true : false;
+        return StudentDao.deleteStudent(sno) > 0;
     }
 
     public static boolean updateStudent(String sno, String sname, String sdatebirth, String ssex, String snativeplace, String shouseaddress, String snation, String snoOld) {
-        return StudentDao.updateStudent(new Student(sno, sname, sdatebirth, ssex,snativeplace,shouseaddress,snation), snoOld) > 0 ? true : false;
+        return StudentDao.updateStudent(new Student(sno, sname, sdatebirth, ssex, snativeplace, shouseaddress, snation), snoOld) > 0;
     }
 
 }

@@ -59,7 +59,7 @@ public class StudentServlet extends HttpServlet {
             pw.write("学号必须大于6位");
             return;
         }
-        if (StudentService.isExist(sno) == true) {
+        if (StudentService.isExist(sno)) {
             pw.write("学号已存在");
             return;
         }
