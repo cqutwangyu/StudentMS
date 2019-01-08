@@ -8,13 +8,13 @@
 ### 要求
 * 实现登录注册、增删改查基本功能
 * 界面美观
-### 涉及技术与工具：
+### 涉及技术与工具
 * 前端：html、css、JavaScript、jquery、ajax
 * 后端：java、jdbc、servlet、org.json
 * 数据库:mysql、Navicat for MySQL
 * IDE：IntelliJ IDEA、Visual Studio Code
 * 服务器：tomcat
-### 项目实现过程：
+### 项目实现过程
 
 * 2018年12月26日~2018年12月28日——实现了界面简陋、数据库字段极简的增删改查、注册登录功能
 
