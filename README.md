@@ -26,5 +26,8 @@
 
 * 2019年1月6日——IDEA中安装了阿里开源的 IDE 代码规约检测插件，并使代码规范化，通过检测。
 
+#### StudentMS 0.7
+* update:Standardize the MVC design pattern.
+
 #### StudentMS 0.6:
-* update:Added comment information for all methods
+* update:Added comment information for all methods.
