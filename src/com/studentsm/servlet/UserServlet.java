@@ -1,6 +1,7 @@
 package com.studentsm.servlet;
 
 import com.studentsm.service.UserService;
+import com.studentsm.service.impl.UserServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,6 +19,7 @@ public class UserServlet extends HttpServlet {
 
     private final int MIN_USER_NAME=8;
     private final int MIN_USER_PASSWORD=6;
+    private static UserService userService=new UserServiceImpl();
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -52,11 +54,11 @@ public class UserServlet extends HttpServlet {
             pw.write("密码必须大于6位");
             return;
         }
-        if(UserService.ifUserNameNotExist(user)){
+        if(userService.ifUserNameNotExist(user)){
             pw.write("用户名不存在");
             return;
         }
-        if (UserService.login(user, pasw)) {
+        if (userService.login(user, pasw)) {
             pw.write("登录成功");
         } else {
             pw.write("密码错误");
@@ -77,7 +79,7 @@ public class UserServlet extends HttpServlet {
             pw.write("密码必须大于6位");
             return;
         }
-        if (UserService.register(user, pasw)) {
+        if (userService.register(user, pasw)) {
             pw.write("注册成功");
         } else {
             pw.write("用户名已存在");

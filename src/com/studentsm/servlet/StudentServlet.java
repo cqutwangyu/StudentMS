@@ -1,7 +1,8 @@
 package com.studentsm.servlet;
 
-import org.json.JSONArray;
 import com.studentsm.service.StudentService;
+import com.studentsm.service.impl.StudentServiceImpl;
+import org.json.JSONArray;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,6 +20,7 @@ import java.io.UnsupportedEncodingException;
 public class StudentServlet extends HttpServlet {
     // 学生的学号长度限制
     private final int MIN_STUDENT_SNO_LENGTH = 6;
+    private static StudentService studentService=new StudentServiceImpl();
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -65,11 +67,11 @@ public class StudentServlet extends HttpServlet {
             pw.write("学号必须为6位");
             return;
         }
-        if (StudentService.isExist(sno)) {
+        if (studentService.isExist(sno)) {
             pw.write("学号已存在");
             return;
         }
-        boolean result = StudentService.addStudent(sno, sname, sdatebirth, ssex, snativeplace, shouseaddress, snation);
+        boolean result = studentService.addStudent(sno, sname, sdatebirth, ssex, snativeplace, shouseaddress, snation);
         if (result) {
             pw.write("添加成功");
         } else {
@@ -82,7 +84,7 @@ public class StudentServlet extends HttpServlet {
      */
     private void deleteStudent(HttpServletRequest request, HttpServletResponse response, PrintWriter pw) {
         String sno = request.getParameter("sno");
-        boolean result = StudentService.deleteStudent(sno);
+        boolean result = studentService.deleteStudent(sno);
         if (result) {
             pw.write("删除成功");
         } else {
@@ -106,7 +108,7 @@ public class StudentServlet extends HttpServlet {
             pw.write("学号必须为6位");
             return;
         }
-        boolean result = StudentService.updateStudent(sno, sname, sdatebirth, ssex, snativeplace, shouseaddress, snation, snoOld);
+        boolean result = studentService.updateStudent(sno, sname, sdatebirth, ssex, snativeplace, shouseaddress, snation, snoOld);
         if (result) {
             pw.write("修改成功");
         } else {
@@ -129,7 +131,7 @@ public class StudentServlet extends HttpServlet {
             return;
         }
         System.out.println(333);
-        JSONArray jsonArray = StudentService.queryStudent(key, value);
+        JSONArray jsonArray = studentService.queryStudent(key, value);
         pw.write(jsonArray.toString());
     }
 
@@ -137,9 +139,9 @@ public class StudentServlet extends HttpServlet {
      * 读取数据库中所有学生信息
      */
     private void loadStudent(HttpServletRequest request, HttpServletResponse response, PrintWriter pw) {
-        JSONArray jsonArray = StudentService.queryStudents();
+        JSONArray jsonArray = studentService.queryStudents();
         if (jsonArray.length() < 1) {
-            StudentService.initDB();
+            studentService.initDB();
         }
         pw.write(jsonArray.toString());
     }

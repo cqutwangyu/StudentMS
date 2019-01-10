@@ -1,6 +1,7 @@
 package com.studentsm.entity;
 
 /**
+ * 学生实体
  * @author WangYu
  */
 public class Student {

@@ -1100,7 +1100,7 @@
     </column>
     <column id="270" parent="230" name="app_state">
       <Position>14</Position>
-      <Comment>0运行中 1已停止  </Comment>
+      <Comment>0运行中 1已停止</Comment>
       <DataType>int(1) unsigned|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>

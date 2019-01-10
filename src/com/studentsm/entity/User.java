@@ -1,6 +1,7 @@
 package com.studentsm.entity;
 
 /**
+ * 用户实体
  * @author WangYu
  */
 public class User {

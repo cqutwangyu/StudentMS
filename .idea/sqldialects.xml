@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/src/com/studentsm/dao/StudentDao.java" dialect="MySQL" />
-    <file url="file://$PROJECT_DIR$/src/com/studentsm/dao/UserDao.java" dialect="ClickHouse" />
+    <file url="file://$PROJECT_DIR$/src/com/studentsm/dao/impl/StudentDaoImpl.java" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/com/studentsm/dao/impl/UserDaoImpl.java" dialect="ClickHouse" />
     <file url="PROJECT" dialect="MySQL" />
   </component>
 </project>
