@@ -50,7 +50,7 @@
 * * 2、前台将html、css、JavaScript分离。
 * 3、增强用户体验，测试并修改系统漏洞。
 #### 十、完成项目
-* 1、可将项目提交到GitHub。
+* 1、可将项目提交到GitHub(推荐)或码云，并坚持更新项目以及学习笔记。
 * 2、后端可继续学习Spring、SpringMVC、SpringBoot、SpringCloud、Dubbo、Docker、SpringData、MyBaties、Hibernate。
 * 3、前端可继续学习Vue、element-Ui、iView、AngularJS、React、TypeScript。
 ### 项目实现过程
