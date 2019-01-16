@@ -21,16 +21,16 @@
 * 3、在IDEA中配置并运行Tomcat。
 * 3、新建Web项目，使项目能正常运行在Tomcat服务器上。
 #### 二、创建数据库与表。
-* * 1、安装并配置mysql。
+* 1、安装并配置mysql。
 * 2、创建数据库，进入数据库，创建表。
 #### 三、后端使用jdbc实现纯java的增删改查功能。
 * 1、下载jar包并导入项目：mysql-connector-java-5.1.44-bin.jar。
 * 2、使用jdbc的Connection连通数据库。
-* * 3、将连通数据库的程序封装成一个工具类中的方法，MyDatabaseConnection类中的getConnection()返回值是Connection。
+* 3、将连通数据库的程序封装成一个工具类中的方法，MyDatabaseConnection类中的getConnection()返回值是Connection。
 * 4、通过MyDatabaseConnection.getConnection()得到的连接对象实现增删改查。
 * 5、将增删改查四个方法封装到一个新类中。
 #### 四、后端使用Sevrlet与web页面交互。
-* * 1、将项目部署到tomcat并启动。
+* 1、将项目部署到tomcat并启动。
 * 2、在页面中请求Servlet，并通过Servlet改变页面内容。
 #### 五、前端使用ajax传数据到后端Sevrlet。
 * 1、下载并引入jquery到html中。
@@ -51,7 +51,7 @@
 * 3、增强用户体验，测试并修改系统漏洞。
 #### 十、完成项目
 * 1、可将项目提交到GitHub。
-* * 2、后端可继续学习Spring、SpringMVC、SpringBoot、SpringCloud、Dubbo、Docker、SpringData、MyBaties、Hibernate。
+* 2、后端可继续学习Spring、SpringMVC、SpringBoot、SpringCloud、Dubbo、Docker、SpringData、MyBaties、Hibernate。
 * 3、前端可继续学习Vue、element-Ui、iView、AngularJS、React、TypeScript。
 ### 项目实现过程
 
