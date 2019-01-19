@@ -2,6 +2,7 @@ package com.studentsm.servlet;
 
 import com.studentsm.service.StudentService;
 import com.studentsm.service.impl.StudentServiceImpl;
+import com.studentsm.util.DataTypeUtils;
 import org.json.JSONArray;
 
 import javax.servlet.ServletException;
@@ -104,6 +105,10 @@ public class StudentServlet extends HttpServlet {
         String snativeplace = request.getParameter("snativeplace");
         String shouseaddress = request.getParameter("shouseaddress");
         String snation = request.getParameter("snation");
+        if(!DataTypeUtils.isNum(sno)){
+            pw.write("学号必须为数字");
+            return;
+        }
         if (sno.length() < MIN_STUDENT_SNO_LENGTH) {
             pw.write("学号必须为6位");
             return;
