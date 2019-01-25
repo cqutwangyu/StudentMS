@@ -4,14 +4,20 @@ import com.wangyu.studentms.dao.StudentDao;
 import com.wangyu.studentms.dao.impl.StudentDaoImpl;
 import com.wangyu.studentms.entity.Student;
 import com.wangyu.studentms.service.StudentService;
+import com.wangyu.studentms.util.DataTypeUtils;
 import org.json.JSONArray;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * 学生类业务实现
+ *
  * @author WangYu
  */
 public class StudentServiceImpl implements StudentService {
-    private static StudentDao studentDao=new StudentDaoImpl();
+    private static StudentDao studentDao = new StudentDaoImpl();
+
     /**
      * 初始化数据库中的学生表数据
      */
@@ -41,7 +47,9 @@ public class StudentServiceImpl implements StudentService {
     public boolean isExist(String sno) {
         boolean result;
         //返回的是一个json数组，如果这个json数组内存储的数据个数大于0则表示存在，result为true
-        result = studentDao.queryStudents("sno", sno).length() > 0;
+        List<Map> rsList = studentDao.queryStudents("sno", sno);
+        JSONArray jsonArray= DataTypeUtils.rsListToJsonArray(rsList);
+        result = jsonArray.length() > 0;
         return result;
     }
 
@@ -54,7 +62,8 @@ public class StudentServiceImpl implements StudentService {
      */
     @Override
     public JSONArray queryStudent(String key, String value) {
-        return studentDao.queryStudents(key, value);
+        List<Map> rsList = studentDao.queryStudents(key, value);
+        return DataTypeUtils.rsListToJsonArray(rsList);
     }
 
     /**
@@ -64,7 +73,8 @@ public class StudentServiceImpl implements StudentService {
      */
     @Override
     public JSONArray queryStudents() {
-        return (JSONArray) studentDao.queryStudents();
+        List<Map> rsList = studentDao.queryStudents();
+        return DataTypeUtils.rsListToJsonArray(rsList);
     }
 
     /**

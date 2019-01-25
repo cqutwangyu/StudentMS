@@ -1,7 +1,9 @@
 package com.wangyu.studentms.dao;
 
 import com.wangyu.studentms.entity.Student;
-import org.json.JSONArray;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * 学生类的持久层接口
@@ -34,13 +36,13 @@ public interface StudentDao {
      * @param v 查询值
      * @return
      */
-    JSONArray queryStudents(String k, String v);
+    List<Map> queryStudents(String k, String v);
 
     /**
      * 查询所有学生信息
      * @return 返回一个包含所有学生信息的json数组
      */
-     JSONArray queryStudents();
+     List<Map> queryStudents();
 
     /**
      * 删除一条学生记录

@@ -3,10 +3,12 @@ package com.wangyu.studentms.dao.impl;
 import com.wangyu.studentms.dao.StudentDao;
 import com.wangyu.studentms.entity.Student;
 import com.wangyu.studentms.util.MyDatabaseConnection;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author WangYu
@@ -97,11 +99,11 @@ public class StudentDaoImpl implements StudentDao {
      * @return
      */
     @Override
-    public JSONArray queryStudents(String k, String v) {
+    public List<Map> queryStudents(String k, String v) {
         Connection con = MyDatabaseConnection.getConnection();
         Statement stmt = null;
         ResultSet rs = null;
-        JSONArray jsonArray = new JSONArray();
+        List<Map> rsList = new ArrayList<>();
         try {
             stmt = con.createStatement();
             String sql = "select * from students where " + k + " like '%" + v + "%'";
@@ -111,26 +113,27 @@ public class StudentDaoImpl implements StudentDao {
             ResultSetMetaData metaData = rs.getMetaData();
             int columnCount = metaData.getColumnCount();
             //遍历
-            jsonArray = rsListToJsonArray(rs, jsonArray, metaData, columnCount);
+            resultSetToList(rs, rsList, metaData, columnCount);
             rs.close();
             con.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return jsonArray;
+        return rsList;
 
     }
+
 
     /**
      * 查询所有学生信息
      * @return 返回一个包含所有学生信息的json数组
      */
     @Override
-    public JSONArray queryStudents() {
+    public List<Map> queryStudents() {
         Connection con = MyDatabaseConnection.getConnection();
         Statement stmt = null;
         ResultSet rs = null;
-        JSONArray jsonArray = new JSONArray();
+        List<Map> rsList = new ArrayList<>();
         try {
             stmt = con.createStatement();
             String sql = "select * from students order by sno";
@@ -140,41 +143,36 @@ public class StudentDaoImpl implements StudentDao {
             ResultSetMetaData metaData = rs.getMetaData();
             int columnCount = metaData.getColumnCount();
             //遍历
-            jsonArray = rsListToJsonArray(rs, jsonArray, metaData, columnCount);
+            resultSetToList(rs, rsList, metaData, columnCount);
             rs.close();
             con.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return jsonArray;
+        return rsList;
 
     }
 
     /**
-     *  将ResultSet得到的sql查询结果存储到json数组中
-     * @param rs 数据库操作后返回的结果
-     * @param jsonArray 存储数据的json数组
-     * @param metaData rs数据集
-     * @param columnCount rs的列数
-     * @return json数组
+     * 将rs中的数据转存到list中
+     * @param rs
+     * @param rsList
+     * @param metaData
+     * @param columnCount
      * @throws SQLException
      */
-    public static JSONArray rsListToJsonArray(ResultSet rs, JSONArray jsonArray, ResultSetMetaData metaData, int columnCount)  {
-        try {
-            while (rs.next()) {
-                JSONObject jsonObject = new JSONObject();
-                for (int i = 1; i <= columnCount; i++) {
-                    String key = metaData.getColumnLabel(i);
-                    String value = rs.getString(key);
-                    jsonObject.put(key, value);
-                }
-                jsonArray.put(jsonObject);
+    private void resultSetToList(ResultSet rs, List<Map> rsList, ResultSetMetaData metaData, int columnCount) throws SQLException {
+        while (rs.next()) {
+            HashMap rowData = new HashMap(columnCount);
+            for (int i = 1; i <= columnCount; i++) {
+                String key = metaData.getColumnLabel(i);
+                String value = rs.getString(key);
+                rowData.put(key, value);
             }
-        }catch (Exception e){
-            e.printStackTrace();
+            rsList.add(rowData);
         }
-        return jsonArray;
     }
+
 
     /**
      * 删除一条学生记录
