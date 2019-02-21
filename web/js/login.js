@@ -1,7 +1,9 @@
 "use strict";
 window.onload = function () {
     background();
-    $(".login_input")[0].focus()//网页打开后自动让用户名输入框获得焦点
+    // $(".login_input")[0].focus()//网页打开后自动让用户名输入框获得焦点
+    $(".login_input").val("admin001")//自动输入默认登录用户名密码
+    $(".login_tips").css("display","none")
 }
 function inputFocus(e) {
     $(e).parent().siblings(".login_tips").css("color", "#ddd");

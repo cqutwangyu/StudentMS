@@ -10,8 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b43a105c-7034-48bc-8466-93205e23db35" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/StudentMS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/StudentMS.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/StudentMS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/StudentMS.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/web/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/web/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/login.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,10 +64,10 @@
     <session id="766490944">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="70" />
+          <entry key="project.closed" value="74" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.1" value="3" />
-          <entry key="project.open.time.10" value="7" />
+          <entry key="project.open.time.1" value="5" />
+          <entry key="project.open.time.10" value="8" />
           <entry key="project.open.time.11" value="7" />
           <entry key="project.open.time.12" value="13" />
           <entry key="project.open.time.13" value="2" />
@@ -73,22 +76,22 @@
           <entry key="project.open.time.16" value="3" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.2" value="6" />
-          <entry key="project.open.time.3" value="3" />
+          <entry key="project.open.time.3" value="4" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.8" value="6" />
           <entry key="project.open.time.9" value="13" />
-          <entry key="project.opened" value="73" />
+          <entry key="project.opened" value="77" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="3" />
-          <entry key="css" value="6" />
-          <entry key="html" value="30" />
+          <entry key="css" value="7" />
+          <entry key="html" value="31" />
           <entry key="iml" value="5" />
-          <entry key="java" value="272" />
-          <entry key="js" value="13" />
+          <entry key="java" value="290" />
+          <entry key="js" value="14" />
           <entry key="json" value="1" />
           <entry key="jsp" value="2" />
           <entry key="kt" value="1" />
@@ -104,15 +107,15 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="3" />
-          <entry key="CSS" value="6" />
+          <entry key="CSS" value="7" />
           <entry key="Database Element" value="7" />
-          <entry key="HTML" value="30" />
+          <entry key="HTML" value="31" />
           <entry key="IDEA_MODULE" value="5" />
           <entry key="Image" value="1" />
-          <entry key="JAVA" value="272" />
+          <entry key="JAVA" value="290" />
           <entry key="JSON" value="1" />
           <entry key="JSP" value="2" />
-          <entry key="JavaScript" value="13" />
+          <entry key="JavaScript" value="14" />
           <entry key="Kotlin" value="1" />
           <entry key="Markdown" value="6" />
           <entry key="SQL" value="4" />
@@ -123,26 +126,26 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="16" />
-          <entry key="dummy" value="17" />
-          <entry key="html" value="679" />
-          <entry key="java" value="8272" />
-          <entry key="js" value="1776" />
+          <entry key="css" value="18" />
+          <entry key="dummy" value="46" />
+          <entry key="html" value="705" />
+          <entry key="java" value="9124" />
+          <entry key="js" value="1838" />
           <entry key="jsp" value="24" />
           <entry key="md" value="44" />
-          <entry key="txt" value="346" />
+          <entry key="txt" value="348" />
           <entry key="xml" value="394" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="16" />
-          <entry key="HTML" value="684" />
-          <entry key="JAVA" value="8272" />
+          <entry key="CSS" value="18" />
+          <entry key="HTML" value="710" />
+          <entry key="JAVA" value="9124" />
           <entry key="JSP" value="24" />
-          <entry key="JavaScript" value="1771" />
+          <entry key="JavaScript" value="1833" />
           <entry key="Markdown" value="44" />
-          <entry key="PLAIN_TEXT" value="363" />
+          <entry key="PLAIN_TEXT" value="394" />
           <entry key="XML" value="394" />
         </counts>
       </usages-collector>
@@ -154,28 +157,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/wangyu/studentms/servlet/StudentServlet.java">
+        <entry file="file://$PROJECT_DIR$/web/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+            <state relative-caret-position="851">
+              <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/login.html">
+        <entry file="file://$PROJECT_DIR$/web/css/login.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+            <state relative-caret-position="1219">
+              <caret line="53" column="15" selection-start-line="53" selection-start-column="15" selection-end-line="53" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/wangyu/studentms/servlet/UserServlet.java">
+        <entry file="file://$PROJECT_DIR$/web/js/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="50" column="34" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
+            <state relative-caret-position="138">
+              <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -202,6 +205,7 @@
       <find>-center</find>
       <find>public</find>
       <find>rsListToJsonArray</find>
+      <find>queryStudents</find>
     </findStrings>
     <replaceStrings>
       <replace>pst.setString(3, s.getSdatebirth());</replace>
@@ -217,12 +221,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Servlet/DeleteServlet.java" />
-        <option value="$PROJECT_DIR$/src/Servlet/QueryServlet.java" />
-        <option value="$PROJECT_DIR$/src/Util/mDatabaseConnection.java" />
-        <option value="$PROJECT_DIR$/src/Dao/UserDao.java" />
-        <option value="$PROJECT_DIR$/src/Entity/Student.java" />
-        <option value="$PROJECT_DIR$/web/js/main.js" />
         <option value="$PROJECT_DIR$/src/Service/UserService.java" />
         <option value="$PROJECT_DIR$/src/Servlet/UserServlet.java" />
         <option value="$PROJECT_DIR$/src/Dao/StudentDao.java" />
@@ -237,7 +235,6 @@
         <option value="$PROJECT_DIR$/src/servlet/StudentServlet.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/dao/test.java" />
-        <option value="$PROJECT_DIR$/web/js/login.js" />
         <option value="$PROJECT_DIR$/src/servlet/StudentServletTest.java" />
         <option value="$PROJECT_DIR$/src/servlet/UserServlet.java" />
         <option value="$PROJECT_DIR$/src/dao/UserDao.java" />
@@ -266,8 +263,15 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/com/wangyu/studentms/servlet/StudentServlet.java" />
         <option value="$PROJECT_DIR$/web/main.html" />
-        <option value="$PROJECT_DIR$/web/login.html" />
         <option value="$PROJECT_DIR$/src/com/wangyu/studentms/servlet/UserServlet.java" />
+        <option value="$PROJECT_DIR$/src/com/wangyu/studentms/util/MyDatabaseConnection.java" />
+        <option value="$PROJECT_DIR$/src/com/wangyu/studentms/dao/StudentDao.java" />
+        <option value="$PROJECT_DIR$/src/com/wangyu/studentms/service/impl/StudentServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/wangyu/studentms/util/DataTypeUtils.java" />
+        <option value="$PROJECT_DIR$/src/com/wangyu/studentms/dao/impl/StudentDaoImpl.java" />
+        <option value="$PROJECT_DIR$/web/login.html" />
+        <option value="$PROJECT_DIR$/web/css/login.css" />
+        <option value="$PROJECT_DIR$/web/js/login.js" />
       </list>
     </option>
   </component>
@@ -326,6 +330,39 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="StudentMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StudentMS" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StudentMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StudentMS" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StudentMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StudentMS" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="StudentMS" type="58d84e3e:PackageViewProjectNode" />
+              <item name="StudentMS" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -364,33 +401,6 @@
         </subPane>
       </pane>
       <pane id="AndroidView" />
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="StudentMS" type="58d84e3e:PackageViewProjectNode" />
-              <item name="StudentMS" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="StudentMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StudentMS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StudentMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StudentMS" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -400,16 +410,17 @@
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="studentms" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://I:/ProjectSave/IDEA/StudentMS/src/com/wangyu/studentms/service/impl/StudentServiceImpl.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548143967309" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548407530697" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="ignore_missing_gitignore" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Spring/Spring_Ann_AOP" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -459,6 +470,7 @@
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="Unnamed_StudentMS_5" />
+        <option name="JNDI_PORT" value="1100" />
       </server-settings>
       <predefined_log_file id="Tomcat" enabled="true" />
       <predefined_log_file id="Tomcat Catalina" enabled="true" />
@@ -554,7 +566,6 @@
     <configuration name="远程 Tomcat8.5" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote" APPLICATION_SERVER_NAME="Tomcat 8.5.35" ALTERNATIVE_JRE_ENABLED="false">
       <option name="HOST" value="39.108.252.228" />
       <option name="LOCAL" value="false" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://39.108.252.228:8080/" />
       <option name="UPDATING_POLICY" value="hot-swap-classes" />
       <deployment>
         <artifact name="StudentMS:war exploded">
@@ -789,6 +800,10 @@
       <workItem from="1548140428220" duration="3617000" />
       <workItem from="1548228547467" duration="2022000" />
       <workItem from="1548243678778" duration="184000" />
+      <workItem from="1548402080257" duration="5441000" />
+      <workItem from="1548417977491" duration="66000" />
+      <workItem from="1550738636700" duration="864000" />
+      <workItem from="1550739523892" duration="11000" />
     </task>
     <task id="LOCAL-00001" summary="学生管理系统0.1">
       <created>1546432305538</created>
@@ -944,7 +959,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548143409466</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="StudentMS 0.8&#10;update:Student id type verification">
+      <created>1548407435566</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1548407435566</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -974,7 +996,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165138000" />
+    <option name="totallyTimeSpent" value="171520000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -987,8 +1009,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5509259" visible="true" weight="0.21849866" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5509259" visible="true" weight="0.22922252" />
       <window_info id="Structure" order="1" sideWeight="0.4476386" side_tool="true" weight="0.1997319" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -998,7 +1021,7 @@
       <window_info id="JRebel" order="7" sideWeight="0.44907406" side_tool="true" weight="0.21313673" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32838038" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6286863" weight="0.43620178" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6286863" weight="0.33531156" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49865952" weight="0.5400593" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1007,7 +1030,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32844576" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5013405" side_tool="true" weight="0.35905045" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49329758" weight="0.32789317" />
-      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32919255" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32789317" />
       <window_info anchor="bottom" id="Database Changes" order="12" sideWeight="0.49932885" weight="0.32986626" />
       <window_info anchor="bottom" id="Version Control" order="13" sideWeight="0.4966443" weight="0.16023739" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.32991204" />
@@ -1016,7 +1039,7 @@
       <window_info anchor="bottom" id="JRebel Console" order="17" sideWeight="0.42761394" side_tool="true" weight="0.35905045" />
       <window_info anchor="bottom" id="Problems" order="18" />
       <window_info anchor="bottom" x="613" y="296" width="310" height="242" id="Web" order="19" sideWeight="0.37131366" side_tool="true" weight="0.43620178" />
-      <window_info active="true" anchor="bottom" id="File Transfer" order="20" sideWeight="0.49932975" visible="true" weight="0.32937685" />
+      <window_info anchor="bottom" id="File Transfer" order="20" sideWeight="0.49932975" weight="0.32937685" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1126,6 +1149,13 @@
     <MESSAGE value="StudentMS 0.8&#10;update:Student id type verification" />
     <option name="LAST_COMMIT_MESSAGE" value="StudentMS 0.8&#10;update:Student id type verification" />
   </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+        <watch expression="((JDBC42ResultSet)rs).catalog" custom="com.mysql.jdbc.JDBC42ResultSet" />
+      </configuration>
+    </watches-manager>
+  </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
@@ -1212,13 +1242,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-5.1.44-bin.jar!/com/mysql/jdbc/MysqlIO.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
@@ -1272,13 +1295,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wangyu/studentms/dao/StudentDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -1300,27 +1316,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wangyu/studentms/entity/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="74" column="57" selection-start-line="74" selection-start-column="57" selection-end-line="74" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wangyu/studentms/dao/impl/StudentDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2240">
-          <caret line="78" column="26" lean-forward="true" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wangyu/studentms/service/impl/StudentServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/wangyu/studentms/dao/impl/UserDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="874">
@@ -1328,24 +1323,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wangyu/studentms/util/MyDatabaseConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/wangyu/studentms/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wangyu/studentms/service/StudentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -1373,20 +1354,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wangyu/studentms/util/DataTypeUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/web/WEB-INF/web.xml" />
     <entry file="file://$PROJECT_DIR$/src/rebel-remote.xml" />
     <entry file="file://$PROJECT_DIR$/src/rebel.xml">
@@ -1409,24 +1376,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wangyu/studentms/servlet/UserServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="50" column="34" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wangyu/studentms/service/StudentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wangyu/studentms/util/MyDatabaseConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wangyu/studentms/dao/StudentDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="33" column="14" lean-forward="true" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/wangyu/studentms/servlet/StudentServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+        <state relative-caret-position="126">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wangyu/studentms/entity/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-217">
+          <caret line="74" column="57" selection-start-line="74" selection-start-column="57" selection-end-line="74" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wangyu/studentms/service/impl/StudentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="32" column="49" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wangyu/studentms/dao/impl/StudentDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="160" column="25" lean-forward="true" selection-start-line="160" selection-start-column="25" selection-end-line="160" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/wangyu/studentms/util/DataTypeUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="33" column="65" lean-forward="true" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+        <state relative-caret-position="851">
+          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/wangyu/studentms/servlet/UserServlet.java">
+    <entry file="file://$PROJECT_DIR$/web/css/login.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="50" column="34" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
+        <state relative-caret-position="1219">
+          <caret line="53" column="15" selection-start-line="53" selection-start-column="15" selection-end-line="53" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
         </state>
       </provider>
     </entry>
