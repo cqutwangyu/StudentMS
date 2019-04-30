@@ -1,13 +1,6 @@
 [👨‍🎓StudentMS👩‍🎓](http://39.108.252.228/StudentMS_war_exploded/ "学生信息管理系统")
 ====
-### 项目背景
-* 2018年12月23日加入校实验室ICDIO预备队
-
-* 2018年12月26日接到实验室布置新入成员任务：独立完成《学生信息管理系统》
-
-* 2019年1月28日顺利完成《学生信息管理系统》并参加实验室放假前团年活动
-
-### 要求
+### 项目内容
 * 实现登录注册、增删改查基本功能
 * 界面美观
 ### 涉及技术与工具
@@ -55,20 +48,3 @@
 * 1、可将项目提交到GitHub(推荐)或码云，并坚持更新项目以及学习笔记。
 * 2、后端可继续学习Spring、SpringMVC、SpringBoot、SpringCloud、Dubbo、Docker、SpringData、MyBaties、Hibernate。
 * 3、前端可继续学习Vue、element-Ui、iView、AngularJS、React、TypeScript。
-### 项目实现过程
-
-* 2018年12月26日~2018年12月28日——实现了界面简陋、数据库字段极简的增删改查、注册登录功能
-
-* 2018年12月29日~2019年1月1日——元旦放假
-
-* 2019年1月2日~2019年1月4日——优化了界面、增加了数据库字段、更新了增删改查的字段，并在这期间学习使用github
-
-* 2019年1月5日——更新登录界面自适应、数据校验、错误提示、信息被清空后自动数据复原
-
-* 2019年1月6日——IDEA中安装了阿里开源的 IDE 代码规约检测插件，并使代码规范化，通过检测。
-
-#### StudentMS 0.7
-* update:Standardize the MVC design pattern.
-
-#### StudentMS 0.6:
-* update:Added comment information for all methods.
