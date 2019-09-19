@@ -1,4 +1,4 @@
-[👨‍🎓学生信息管理系统](http://39.108.252.228/StudentMS_war_exploded/ "学生信息管理系统")
+[👨‍🎓学生信息管理系统](http://chongqingwangyu.xyz/StudentMS/ "学生信息管理系统")
 ====
 ### 项目内容
 * 实现登录注册、增删改查基本功能
